@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import noaImage from "@/assets/noa-profile.jpg";
-import coralImage from "@/assets/coral-profile.jpg";
+import { Instagram } from "lucide-react";
 
 const About = () => {
   const { toast } = useToast();
@@ -25,7 +25,7 @@ const About = () => {
     
     toast({
       title: "הודעה נשלחה!",
-      description: "נחזור אלייך בהקדם"
+      description: "אחזור אליך בהקדם"
     });
 
     setFormData({ name: "", email: "", phone: "", message: "" });
@@ -37,70 +37,69 @@ const About = () => {
       <section className="section-padding bg-secondary/30">
         <div className="container max-w-4xl mx-auto text-center">
           <h1 className="font-display text-5xl md:text-6xl text-foreground mb-6 animate-fade-in">
-            מי אנחנו?
+            קצת עליי
           </h1>
           <p className="font-body text-xl text-muted-foreground max-w-2xl mx-auto">
-            שתי נשים שמאמינות בכוח של מרחב נשי אמיתי, ויוצרות חוויות שמחברות גוף, נפש ורוח
+            מאמינה בכוח של תנועה, נשימה וחיבור
           </p>
         </div>
       </section>
 
-      {/* Founders */}
+      {/* About Noa */}
       <section className="section-padding">
-        <div className="container max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12">
-            {/* נועה */}
-            <div className="gradient-card rounded-3xl p-8 shadow-elevated">
-              <div className="flex flex-col items-center text-center">
-                <img
-                  src={noaImage}
-                  alt="נועה - מנחת הריטריט"
-                  className="w-48 h-48 rounded-full object-cover shadow-soft mb-6 border-4 border-background"
-                />
-                
-                <h2 className="font-display text-3xl text-foreground mb-4">
-                  נועה
+        <div className="container max-w-4xl mx-auto">
+          <div className="gradient-card rounded-3xl p-8 md:p-12 shadow-elevated">
+            <div className="flex flex-col md:flex-row gap-8 items-center md:items-start">
+              <img
+                src={noaImage}
+                alt="נועה לונה - מורה ליוגה"
+                className="w-48 h-48 md:w-64 md:h-64 rounded-full object-cover shadow-soft border-4 border-background flex-shrink-0"
+              />
+              
+              <div className="text-center md:text-right">
+                <h2 className="font-display text-4xl text-foreground mb-6">
+                  נועה לונה
                 </h2>
                 
-                <p className="font-body text-foreground/80 leading-relaxed">
-                  היי, קוראים לי נועה. אני אישה שנוגעת וננגעת, נעה ומשתנה כל הזמן.
-                  <br /><br />
-                  אני מורה ותלמידה של היוגה כבר יותר מעשור. יוצרת תוכן ומנחת סדנאות גוף נפש.
-                  <br /><br />
-                  מלווה תהליכים ברוח ההתמקדות בשילוב דימיון מודרך, סאונד הילינג וכלים נוספים מעולמות הרוח והמיינדפולנס.
-                </p>
-              </div>
-            </div>
+                <div className="font-body text-foreground/80 leading-relaxed space-y-4">
+                  <p>
+                    היי, קוראים לי נועה. אני אישה שנוגעת וננגעת, נעה ומשתנה כל הזמן.
+                  </p>
+                  <p>
+                    אני מורה ותלמידה של היוגה כבר יותר מעשור. יוצרת תוכן ומנחת סדנאות גוף נפש.
+                  </p>
+                  <p>
+                    מלווה תהליכים ברוח ההתמקדות בשילוב דימיון מודרך, סאונד הילינג וכלים נוספים מעולמות הרוח והמיינדפולנס.
+                  </p>
+                  <p>
+                    הריטריטים שלי נולדו מתוך הדרך שלי, ומתוך רצון ליצור מרחב שמחזיק ומאפשר לכל מי שמגיע לעצור, לנשום ולהתחבר לעצמו.
+                  </p>
+                </div>
 
-            {/* קורל */}
-            <div className="gradient-card rounded-3xl p-8 shadow-elevated">
-              <div className="flex flex-col items-center text-center">
-                <img
-                  src={coralImage}
-                  alt="קורל - יוצרת הריטריט"
-                  className="w-48 h-48 rounded-full object-cover object-top shadow-soft mb-6 border-4 border-background"
-                />
-                
-                <h2 className="font-display text-3xl text-foreground mb-4">
-                  קורל
-                </h2>
-                
-                <p className="font-body text-foreground/80 leading-relaxed">
-                  היי, קוראים לי קורל. בעשר שנים האחרונות אני עוסקת בהפקת אירועים.
-                  <br /><br />
-                  אני מאמינה שגוף ונפש קשורים אחד בשני ויש קשר הדוק בין המצב הפיזי למצב הנפשי.
-                  <br /><br />
-                  באה מהעולם של ההייטק ועוזרת להנגיש את עולם הוולנס לכולן. ביחד עם נועה, אנחנו מתרכזות באירועים וזמן שמתעסק בשניים - גוף ונפש.
-                </p>
+                {/* Social Links */}
+                <div className="flex justify-center md:justify-start gap-4 mt-6">
+                  <a
+                    href="https://www.instagram.com/noa_luna_yoga"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-primary hover:text-primary/80 transition-colors"
+                  >
+                    <Instagram size={20} />
+                    <span className="font-body">@noa_luna_yoga</span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
+        </div>
+      </section>
 
-          <div className="text-center mt-12">
-            <p className="font-body text-lg text-muted-foreground italic max-w-3xl mx-auto">
-              הריטריטים שלנו נולדו מתוך הדרך שלנו, ומתוך רצון ליצור מרחב שמחזיק את כל האספקטים של חיינו כנשים.
-            </p>
-          </div>
+      {/* ESSENCE Collaboration Note */}
+      <section className="py-8">
+        <div className="container max-w-4xl mx-auto text-center">
+          <p className="font-body text-muted-foreground italic">
+            ריטריט ESSENCE נוצר בשיתוף עם קורל, שותפה מיוחדת לפרויקט הנשי הזה.
+          </p>
         </div>
       </section>
 
@@ -112,7 +111,7 @@ const About = () => {
               צרו קשר
             </h2>
             <p className="font-body text-xl text-muted-foreground">
-              יש לך שאלה? רוצה לדעת יותר? כתבי לנו
+              יש לכם שאלה? רוצים לדעת יותר? כתבו לי
             </p>
           </div>
 
@@ -172,12 +171,12 @@ const About = () => {
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 required
                 className="text-right min-h-32"
-                placeholder="מה תרצי לשאול?"
+                placeholder="מה תרצו לשאול?"
               />
             </div>
 
             <Button type="submit" variant="default" size="lg" className="w-full">
-              שלחי הודעה
+              שלחו הודעה
             </Button>
           </form>
         </div>
