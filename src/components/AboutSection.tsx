@@ -45,7 +45,7 @@ const AboutSection = () => {
               <img
                 src={coralImage}
                 alt="קורל - יוצרת הריטריט"
-                className="w-48 h-48 rounded-full object-cover object-top shadow-soft mb-6 border-4 border-background"
+                className="w-48 h-48 rounded-full object-cover object-[center_20%] shadow-soft mb-6 border-4 border-background"
               />
               
               <h3 className="font-display text-3xl text-foreground mb-4">
