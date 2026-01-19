@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import RetreatCard from "@/components/RetreatCard";
 import { Button } from "@/components/ui/button";
 import { getUpcomingRetreats } from "@/data/retreats";
-import heroImage from "@/assets/hero-retreat.jpg";
+import heroImage from "@/assets/hero-wellness.jpg";
 
 const Home = () => {
   const upcomingRetreats = getUpcomingRetreats();
