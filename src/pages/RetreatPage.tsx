@@ -246,11 +246,11 @@ const SinaiAboutSection = () => (
         <div className="flex flex-col md:flex-row items-center gap-8">
           <img 
             src={noaProfile} 
-            alt="נועה לונה" 
+            alt="נועה מתתיהו" 
             className="w-48 h-48 rounded-full object-cover shadow-lg"
           />
           <div className="text-center md:text-right">
-            <h3 className="font-display text-3xl text-primary mb-4">Noa Luna</h3>
+            <h3 className="font-display text-3xl text-primary mb-4">נועה מתתיהו</h3>
             <p className="font-body text-foreground/80 leading-relaxed">
               מורה ותלמידה של היוגה כבר יותר מעשור. מנחה סדנאות, מלווה תהליכים, 
               ויוצרת מרחבים שמזמינים חיבור אמיתי לגוף ולנפש.
