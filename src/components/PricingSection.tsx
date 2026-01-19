@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import healingImage from "@/assets/retreat-healing.jpg";
 
 const PricingSection = () => {
   return (
@@ -12,14 +11,6 @@ const PricingSection = () => {
           <p className="font-body text-xl text-muted-foreground">
             בחרי את המסלול שמתאים לך
           </p>
-        </div>
-
-        <div className="rounded-2xl overflow-hidden shadow-elevated mb-12">
-          <img
-            src={healingImage}
-            alt="הרפייה בריטריט"
-            className="w-full h-72 object-cover"
-          />
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 mb-12">
