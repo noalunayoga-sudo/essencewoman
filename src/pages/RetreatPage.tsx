@@ -18,7 +18,7 @@ const SinaiIntroSection = () => (
   <section className="section-padding bg-secondary">
     <div className="container max-w-4xl mx-auto text-center">
       <h2 className="font-display text-4xl md:text-5xl text-foreground mb-6">
-        חופשה שזה לא רק חופשה
+        בואו תתפנקו
       </h2>
       
       <p className="font-display text-2xl text-primary mb-4 italic">
@@ -133,7 +133,7 @@ const SinaiLocationSection = () => (
       <div className="gradient-card rounded-3xl p-8 md:p-12 shadow-elevated">
         <div className="text-center mb-8">
           <h2 className="font-display text-3xl md:text-4xl text-foreground mb-4">
-            מלדיב ביץ׳ - חוף אל מאש
+            מלדיב ביץ׳ - חוף אל מאחש
           </h2>
           <p className="font-body text-xl text-muted-foreground">
             הבית שלנו ל-4 ימים
@@ -142,7 +142,7 @@ const SinaiLocationSection = () => (
 
         <div className="space-y-4 font-body text-foreground/80 text-lg leading-relaxed">
           <p>
-            קאמפ מלדיב ביץ׳ ממוקם על חוף אל מאש הקסום בסיני, עם נוף ישיר לים ולהרים.
+            קאמפ מלדיב ביץ׳ ממוקם על חוף אל מאחש הקסום בסיני, עם נוף ישיר לים ולהרים.
           </p>
           <p>
             בקתות עץ יפיפיות על החוף - ממוזגות, עם מקלחת ושירותים פרטיים בכל בקתה.
@@ -172,7 +172,7 @@ const SinaiPricingSection = ({ priceTiers, whatsappLink, cancellationPolicy }: {
             מחירים והרשמה
           </h2>
           <p className="font-body text-xl text-muted-foreground">
-            30 מקומות בלבד | מי שמזדרז נהנה
+            מחיר עולה עם הזמן - שווה להירשם מוקדם
           </p>
         </div>
 
@@ -329,6 +329,48 @@ const SinaiForWhoSection = () => (
   </section>
 );
 
+const SinaiTestimonialsSection = () => (
+  <section className="section-padding">
+    <div className="container max-w-4xl mx-auto">
+      <div className="text-center mb-12">
+        <h2 className="font-display text-4xl md:text-5xl text-foreground mb-4">
+          מה אומרים עלינו
+        </h2>
+      </div>
+
+      <div className="grid md:grid-cols-2 gap-6">
+        <div className="gradient-card rounded-2xl p-6 shadow-elevated">
+          <p className="font-body text-foreground/80 italic mb-4 leading-relaxed">
+            "חזרתי מהטיול עם המון אנרגיה וחברים חדשים. נועה יוצרת אווירה כזו נעימה ומקבלת, שאפשר פשוט להיות את עצמך."
+          </p>
+          <p className="font-display text-primary">- שירה</p>
+        </div>
+
+        <div className="gradient-card rounded-2xl p-6 shadow-elevated">
+          <p className="font-body text-foreground/80 italic mb-4 leading-relaxed">
+            "הייתי בהרבה טיולים מאורגנים, אבל זה היה משהו אחר לגמרי. השילוב של יוגה, טבע ואנשים מדהימים - פשוט מושלם."
+          </p>
+          <p className="font-display text-primary">- דני</p>
+        </div>
+
+        <div className="gradient-card rounded-2xl p-6 shadow-elevated">
+          <p className="font-body text-foreground/80 italic mb-4 leading-relaxed">
+            "באתי לבד וקצת חששתי, אבל תוך כמה שעות הרגשתי כאילו אני מכירה את כולם שנים. חוויה שאני ממליצה לכל אחד ואחת."
+          </p>
+          <p className="font-display text-primary">- מיכל</p>
+        </div>
+
+        <div className="gradient-card rounded-2xl p-6 shadow-elevated">
+          <p className="font-body text-foreground/80 italic mb-4 leading-relaxed">
+            "סיני הוא מקום מיוחד, אבל עם הקבוצה הזו והאנרגיה הזו - זה הפך לחוויה בלתי נשכחת. כבר נרשמתי לפעם הבאה!"
+          </p>
+          <p className="font-display text-primary">- יובל</p>
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
 const RetreatPage = () => {
   const { id } = useParams<{ id: string }>();
   const retreat = id ? getRetreatById(id) : undefined;
@@ -478,6 +520,8 @@ const RetreatPage = () => {
         <SinaiForWhoSection />
         
         <SinaiAboutSection />
+
+        <SinaiTestimonialsSection />
         
         {retreat.priceTiers && (
           <SinaiPricingSection 
