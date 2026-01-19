@@ -60,6 +60,17 @@ const FeaturesSection = () => {
             </div>
           ))}
         </div>
+
+        <div className="text-center mt-12">
+          <a
+            href="https://wa.me/message/X3ASE2JKXDO7J1"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-body text-lg px-8 py-4 rounded-full transition-colors shadow-lg"
+          >
+            להרשמה
+          </a>
+        </div>
       </div>
     </section>
   );
