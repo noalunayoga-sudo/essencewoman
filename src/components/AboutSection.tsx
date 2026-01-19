@@ -74,7 +74,7 @@ const AboutSection = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              ספרי לנו עוד
+              ספרו לי עוד
             </a>
           </Button>
         </div>
