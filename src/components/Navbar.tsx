@@ -20,8 +20,9 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="font-display text-2xl font-semibold text-foreground">
-            Noa Luna
+          <Link to="/" className="flex items-center gap-3">
+            <span className="font-display text-2xl font-semibold text-foreground">נועה מתתיהו</span>
+            <span className="font-body text-sm text-muted-foreground italic hidden sm:inline">Wellness & Lifestyle</span>
           </Link>
 
           {/* Desktop Navigation */}
