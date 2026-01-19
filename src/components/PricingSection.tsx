@@ -92,6 +92,39 @@ const PricingSection = () => {
             </div>
           </div>
         </div>
+
+        {/* Registration Button */}
+        <div className="text-center mt-10">
+          <a
+            href="https://wa.me/message/X3ASE2JKXDO7J1"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#128C7E] text-white font-body text-lg px-8 py-4 rounded-full transition-colors shadow-lg"
+          >
+            להרשמה בוואטסאפ
+          </a>
+        </div>
+
+        {/* Cancellation Policy */}
+        <div className="mt-12 bg-soft-pink/30 rounded-2xl p-8 text-center">
+          <h4 className="font-display text-xl text-foreground mb-6">
+            מדיניות ביטול
+          </h4>
+          <div className="font-body text-muted-foreground space-y-3">
+            <div className="flex justify-center items-center gap-3">
+              <span className="text-primary">✓</span>
+              <p>עד שבועיים לפני האירוע - החזר מלא</p>
+            </div>
+            <div className="flex justify-center items-center gap-3">
+              <span className="text-primary">✓</span>
+              <p>עד שבוע לפני האירוע - החזר של 50%</p>
+            </div>
+            <div className="flex justify-center items-center gap-3">
+              <span className="text-muted-foreground">•</span>
+              <p>פחות משבוע לפני האירוע - ללא החזר</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
