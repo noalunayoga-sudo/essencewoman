@@ -96,7 +96,7 @@ const SinaiIncludesSection = ({ includes }: { includes: string[] }) => (
           </div>
           <h3 className="font-display text-2xl text-foreground mb-4">האוכל</h3>
           <p className="font-body text-foreground/80">
-            2 ארוחות צמחוניות מלאות ביום, שתייה חמה, פירות ונשנושים כל היום. אוכל מעולה!
+            פריסת בוקר מתוקה עם פירות, עוגות, קפה ותה. בראנץ׳ מפנק ומזין. ארוחת ערב עשירה.
           </p>
         </div>
 
@@ -107,7 +107,7 @@ const SinaiIncludesSection = ({ includes }: { includes: string[] }) => (
           </div>
           <h3 className="font-display text-2xl text-foreground mb-4">התהליך</h3>
           <p className="font-body text-foreground/80">
-            שיעורי יוגה, סדנאות, מדיטציות, טיול שקיעה, שנורקלינג, ומתנה אישית לכל משתתף/ת
+            שיעורי יוגה, סדנאות, דיפ שוואסאנה, שנורקלינג, מדורה, ומתנה אישית לכל משתתף/ת
           </p>
         </div>
       </div>
@@ -160,84 +160,170 @@ const SinaiPricingSection = ({ priceTiers, whatsappLink, cancellationPolicy }: {
   priceTiers: { name: string; price: number; spots: number; spotsLeft: number; status: string }[];
   whatsappLink: string;
   cancellationPolicy?: string[];
-}) => (
-  <section className="section-padding bg-secondary">
-    <div className="container max-w-4xl mx-auto">
-      <div className="text-center mb-12">
-        <h2 className="font-display text-4xl md:text-5xl text-foreground mb-4">
-          מחירים והרשמה
-        </h2>
-        <p className="font-body text-xl text-muted-foreground">
-          30 מקומות בלבד | מי שמזדרז נהנה
-        </p>
-      </div>
-
-      <div className="grid md:grid-cols-3 gap-6 mb-12">
-        {priceTiers.map((tier, index) => (
-          <div 
-            key={index} 
-            className={`gradient-card rounded-2xl p-6 shadow-elevated text-center ${
-              tier.status === "sold-out" ? "opacity-60" : ""
-            }`}
-          >
-            <h3 className="font-display text-lg text-foreground mb-2">{tier.name}</h3>
-            <p className="font-display text-4xl text-primary mb-2">₪{tier.price}</p>
-            <p className="font-body text-sm text-muted-foreground mb-4">
-              {tier.status === "sold-out" ? "אזל" : `${tier.spotsLeft} מקומות פנויים`}
-            </p>
-            {tier.status !== "sold-out" && index === 0 && (
-              <span className="inline-block bg-primary text-primary-foreground text-sm px-3 py-1 rounded-full">
-                Early Bird
-              </span>
-            )}
-          </div>
-        ))}
-      </div>
-
-      <div className="text-center mb-12">
-        <Button variant="whatsapp" size="xl" asChild>
-          <a
-            href={whatsappLink}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            לשריון מקום
-          </a>
-        </Button>
-      </div>
-
-      {cancellationPolicy && cancellationPolicy.length > 0 && (
-        <div className="gradient-card rounded-2xl p-6 shadow-elevated">
-          <h3 className="font-display text-xl text-foreground mb-4 text-center">מדיניות ביטול</h3>
-          <ul className="space-y-2">
-            {cancellationPolicy.map((policy, index) => (
-              <li key={index} className="flex items-start gap-2 font-body text-foreground/80 text-sm">
-                <span className="text-primary mt-1">•</span>
-                {policy}
-              </li>
-            ))}
-          </ul>
+}) => {
+  // Find the first available tier (current price)
+  const currentTierIndex = priceTiers.findIndex(tier => tier.status !== "sold-out");
+  
+  return (
+    <section className="section-padding bg-secondary">
+      <div className="container max-w-4xl mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="font-display text-4xl md:text-5xl text-foreground mb-4">
+            מחירים והרשמה
+          </h2>
+          <p className="font-body text-xl text-muted-foreground">
+            30 מקומות בלבד | מי שמזדרז נהנה
+          </p>
         </div>
-      )}
-    </div>
-  </section>
-);
+
+        <div className="grid md:grid-cols-3 gap-6 mb-12">
+          {priceTiers.map((tier, index) => {
+            const isCurrent = index === currentTierIndex;
+            const isSoldOut = tier.status === "sold-out";
+            
+            return (
+              <div 
+                key={index} 
+                className={`gradient-card rounded-2xl p-6 shadow-elevated text-center relative ${
+                  isSoldOut ? "opacity-60" : ""
+                } ${isCurrent ? "ring-2 ring-primary scale-105" : ""}`}
+              >
+                {isCurrent && (
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-sm px-4 py-1 rounded-full font-medium">
+                    המחיר הנוכחי
+                  </div>
+                )}
+                <h3 className="font-display text-lg text-foreground mb-2 mt-2">{tier.name}</h3>
+                <p className={`font-display text-4xl mb-2 ${isCurrent ? "text-primary" : "text-foreground"}`}>₪{tier.price}</p>
+                <p className="font-body text-sm text-muted-foreground mb-4">
+                  {isSoldOut ? "אזל" : `${tier.spotsLeft} מקומות פנויים`}
+                </p>
+              </div>
+            );
+          })}
+        </div>
+
+        <div className="text-center mb-12">
+          <Button variant="whatsapp" size="xl" asChild>
+            <a
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              לשריון מקום
+            </a>
+          </Button>
+        </div>
+
+        {cancellationPolicy && cancellationPolicy.length > 0 && (
+          <div className="gradient-card rounded-2xl p-6 shadow-elevated">
+            <h3 className="font-display text-xl text-foreground mb-4 text-center">מדיניות ביטול</h3>
+            <ul className="space-y-2">
+              {cancellationPolicy.map((policy, index) => (
+                <li key={index} className="flex items-start gap-2 font-body text-foreground/80 text-sm">
+                  <span className="text-primary mt-1">•</span>
+                  {policy}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
+    </section>
+  );
+};
+
+import noaProfile from "@/assets/noa-profile.jpg";
 
 const SinaiAboutSection = () => (
   <section className="section-padding">
-    <div className="container max-w-4xl mx-auto text-center">
-      <h2 className="font-display text-4xl md:text-5xl text-foreground mb-6">
+    <div className="container max-w-4xl mx-auto">
+      <h2 className="font-display text-4xl md:text-5xl text-foreground mb-8 text-center">
         מי מנחה?
       </h2>
       
       <div className="gradient-card rounded-3xl p-8 shadow-elevated">
-        <h3 className="font-display text-3xl text-primary mb-4">Noa Luna</h3>
-        <p className="font-body text-foreground/80 leading-relaxed max-w-2xl mx-auto mb-6">
-          מורה ותלמידה של היוגה כבר יותר מעשור. מנחה סדנאות, מלווה תהליכים, 
-          ויוצרת מרחבים שמזמינים חיבור אמיתי לגוף ולנפש.
-          <br /><br />
-          יחד איתי יגיעו מנחים אורחים מיוחדים שיוסיפו עומק וגיוון לחוויה.
+        <div className="flex flex-col md:flex-row items-center gap-8">
+          <img 
+            src={noaProfile} 
+            alt="נועה לונה" 
+            className="w-48 h-48 rounded-full object-cover shadow-lg"
+          />
+          <div className="text-center md:text-right">
+            <h3 className="font-display text-3xl text-primary mb-4">Noa Luna</h3>
+            <p className="font-body text-foreground/80 leading-relaxed">
+              מורה ותלמידה של היוגה כבר יותר מעשור. מנחה סדנאות, מלווה תהליכים, 
+              ויוצרת מרחבים שמזמינים חיבור אמיתי לגוף ולנפש.
+              <br /><br />
+              יחד איתי יגיעו מנחים אורחים מיוחדים שיוסיפו עומק וגיוון לחוויה.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+const SinaiForWhoSection = () => (
+  <section className="section-padding bg-secondary">
+    <div className="container max-w-4xl mx-auto">
+      <div className="text-center mb-12">
+        <h2 className="font-display text-4xl md:text-5xl text-foreground mb-4">
+          למי זה מתאים?
+        </h2>
+        <p className="font-body text-xl text-muted-foreground">
+          הריטריט פתוח לכולם - נשים וגברים כאחד
         </p>
+      </div>
+
+      <div className="grid md:grid-cols-2 gap-6">
+        <div className="gradient-card rounded-2xl p-6 shadow-elevated">
+          <h3 className="font-display text-xl text-primary mb-4">מתאים לך אם...</h3>
+          <ul className="space-y-3 font-body text-foreground/80">
+            <li className="flex items-start gap-2">
+              <Check className="text-primary flex-shrink-0 mt-1" size={18} />
+              את/ה מחפש/ת חופשה שונה מהרגיל
+            </li>
+            <li className="flex items-start gap-2">
+              <Check className="text-primary flex-shrink-0 mt-1" size={18} />
+              רוצה להתנתק באמת מהשגרה
+            </li>
+            <li className="flex items-start gap-2">
+              <Check className="text-primary flex-shrink-0 mt-1" size={18} />
+              אוהב/ת יוגה או סקרן/ית להתנסות
+            </li>
+            <li className="flex items-start gap-2">
+              <Check className="text-primary flex-shrink-0 mt-1" size={18} />
+              מחפש/ת חיבור אנושי אמיתי
+            </li>
+            <li className="flex items-start gap-2">
+              <Check className="text-primary flex-shrink-0 mt-1" size={18} />
+              רוצה לחזור הביתה רענן/ה ומלא/ת אנרגיה
+            </li>
+          </ul>
+        </div>
+
+        <div className="gradient-card rounded-2xl p-6 shadow-elevated">
+          <h3 className="font-display text-xl text-primary mb-4">לא צריך...</h3>
+          <ul className="space-y-3 font-body text-foreground/80">
+            <li className="flex items-start gap-2">
+              <span className="text-primary">✓</span>
+              ניסיון קודם ביוגה
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-primary">✓</span>
+              להיות גמיש/ה או ספורטיבי/ת
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-primary">✓</span>
+              להגיע עם מישהו - אנשים מגיעים לבד ויוצאים עם חברים
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-primary">✓</span>
+              לדעת לשנרקל - נלמד במקום!
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
@@ -388,6 +474,8 @@ const RetreatPage = () => {
         {retreat.includes && <SinaiIncludesSection includes={retreat.includes} />}
         
         <SinaiLocationSection />
+        
+        <SinaiForWhoSection />
         
         <SinaiAboutSection />
         
