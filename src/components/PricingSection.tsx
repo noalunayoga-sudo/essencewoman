@@ -13,37 +13,55 @@ const PricingSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
-          <div className="gradient-card rounded-3xl p-8 shadow-elevated text-center">
-            <div className="inline-block bg-primary/10 text-primary font-body text-sm px-4 py-1 rounded-full mb-4">
-              מומלץ
+        <div className="grid md:grid-cols-3 gap-6 mb-12">
+          {/* First 7 - Sold Out */}
+          <div className="gradient-card rounded-3xl p-8 shadow-elevated text-center opacity-60">
+            <div className="inline-block bg-muted text-muted-foreground font-body text-sm px-4 py-1 rounded-full mb-4">
+              אזל
             </div>
             <h3 className="font-display text-2xl text-foreground mb-2">
-              הרשמה מוקדמת
+              7 ראשונות
             </h3>
-            <p className="font-body text-muted-foreground mb-6">עד 15/01/2026</p>
-            <div className="font-display text-5xl text-primary mb-2">
-              ₪450
+            <p className="font-body text-muted-foreground mb-6">נמכר</p>
+            <div className="font-display text-5xl text-muted-foreground mb-8 line-through">
+              ₪660
             </div>
-            <p className="font-body text-sm text-muted-foreground mb-6">במקום ₪520</p>
+            <Button variant="hero" size="lg" className="w-full" disabled>
+              אזל המלאי
+            </Button>
+          </div>
+
+          {/* Next 7 - Current Price */}
+          <div className="gradient-card rounded-3xl p-8 shadow-elevated text-center ring-2 ring-primary">
+            <div className="inline-block bg-primary/10 text-primary font-body text-sm px-4 py-1 rounded-full mb-4">
+              המחיר הנוכחי
+            </div>
+            <h3 className="font-display text-2xl text-foreground mb-2">
+              7 הבאות
+            </h3>
+            <p className="font-body text-muted-foreground mb-6">הזדמנות אחרונה במחיר זה</p>
+            <div className="font-display text-5xl text-primary mb-8">
+              ₪720
+            </div>
             <Button variant="whatsapp" size="lg" className="w-full" asChild>
               <a
                 href="https://wa.me/message/X3ASE2JKXDO7J1"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                להרשמה מוקדמת
+                להרשמה עכשיו
               </a>
             </Button>
           </div>
 
+          {/* Last 7 */}
           <div className="gradient-card rounded-3xl p-8 shadow-elevated text-center">
             <h3 className="font-display text-2xl text-foreground mb-2 mt-8">
-              מחיר מלא
+              7 אחרונות
             </h3>
-            <p className="font-body text-muted-foreground mb-6">מ-16/01/2026</p>
+            <p className="font-body text-muted-foreground mb-6">מחיר מלא</p>
             <div className="font-display text-5xl text-foreground mb-8">
-              ₪520
+              ₪780
             </div>
             <Button variant="hero" size="lg" className="w-full" asChild>
               <a
