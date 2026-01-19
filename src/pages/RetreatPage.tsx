@@ -194,10 +194,10 @@ const SinaiPricingSection = ({ priceTiers, whatsappLink, cancellationPolicy }: {
                   </div>
                 )}
                 <h3 className="font-display text-lg text-foreground mb-2 mt-2">{tier.name}</h3>
-                <p className={`font-display text-4xl mb-2 ${isCurrent ? "text-primary" : "text-foreground"}`}>₪{tier.price}</p>
-                <p className="font-body text-sm text-muted-foreground mb-4">
-                  {isSoldOut ? "אזל" : `${tier.spotsLeft} מקומות פנויים`}
-                </p>
+                <p className={`font-display text-4xl ${isCurrent ? "text-primary" : "text-foreground"}`}>₪{tier.price}</p>
+                {isSoldOut && (
+                  <p className="font-body text-sm text-muted-foreground mt-2">אזל</p>
+                )}
               </div>
             );
           })}
