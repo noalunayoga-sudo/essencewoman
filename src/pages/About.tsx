@@ -52,14 +52,20 @@ const About = () => {
             <div className="flex flex-col md:flex-row gap-8 items-center md:items-start">
               <img
                 src={noaImage}
-                alt="נועה לונה - מורה ליוגה"
+                alt="נועה מתתיהו"
                 className="w-48 h-48 md:w-64 md:h-64 rounded-full object-cover shadow-soft border-4 border-background flex-shrink-0"
               />
               
               <div className="text-center md:text-right">
-                <h2 className="font-display text-4xl text-foreground mb-6">
-                  Noa Luna
+                <h2 className="font-display text-4xl text-foreground mb-2">
+                  נועה מתתיהו
                 </h2>
+                <p className="font-body text-sm text-muted-foreground mb-4 italic">
+                  Wellness & Lifestyle
+                </p>
+                <p className="font-body text-primary/90 mb-6">
+                  מחברת אנשים לעצמם ולאחרים מתוך מקום של רכות, שמחה וקבלה
+                </p>
                 
                 <div className="font-body text-foreground/80 leading-relaxed space-y-4">
                   <p>
