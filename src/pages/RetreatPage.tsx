@@ -172,7 +172,7 @@ const SinaiPricingSection = ({ priceTiers, whatsappLink, cancellationPolicy }: {
             מחירים והרשמה
           </h2>
           <p className="font-body text-xl text-muted-foreground">
-            הבטיחו את מקומכן
+            הבטיחו את מקומכם
           </p>
         </div>
 
