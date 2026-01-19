@@ -10,6 +10,15 @@ interface RetreatCardProps {
 const RetreatCard = ({ retreat }: RetreatCardProps) => {
   const isSoldOut = retreat.status === "sold-out" || retreat.spotsLeft === 0;
 
+  // Get the current available price tier
+  const getCurrentPrice = () => {
+    if (retreat.priceTiers) {
+      const availableTier = retreat.priceTiers.find(tier => tier.status === "available" && tier.spotsLeft > 0);
+      return availableTier ? availableTier.price : retreat.price;
+    }
+    return retreat.price;
+  };
+
   return (
     <div className="gradient-card rounded-3xl overflow-hidden shadow-elevated hover:shadow-2xl transition-all duration-300 group">
       {/* Image */}
@@ -26,9 +35,13 @@ const RetreatCard = ({ retreat }: RetreatCardProps) => {
           <span className="absolute top-4 right-4 bg-destructive text-destructive-foreground px-3 py-1 rounded-full font-body text-sm">
             אזל
           </span>
-        ) : (
+        ) : retreat.forWomen ? (
           <span className="absolute top-4 right-4 bg-primary text-primary-foreground px-3 py-1 rounded-full font-body text-sm">
-            {retreat.spotsLeft} מקומות פנויים
+            לנשים בלבד
+          </span>
+        ) : (
+          <span className="absolute top-4 right-4 bg-accent text-accent-foreground px-3 py-1 rounded-full font-body text-sm">
+            לכולם
           </span>
         )}
         
@@ -50,7 +63,7 @@ const RetreatCard = ({ retreat }: RetreatCardProps) => {
         <div className="flex flex-wrap gap-4 mb-6 text-sm text-muted-foreground">
           <div className="flex items-center gap-1">
             <Calendar size={16} />
-            <span className="font-body">{retreat.date}</span>
+            <span className="font-body">{retreat.dateRange || retreat.date}</span>
           </div>
           <div className="flex items-center gap-1">
             <MapPin size={16} />
@@ -58,16 +71,14 @@ const RetreatCard = ({ retreat }: RetreatCardProps) => {
           </div>
           <div className="flex items-center gap-1">
             <Users size={16} />
-            <span className="font-body">{retreat.spots} משתתפות</span>
+            <span className="font-body">{retreat.spots} משתתפים</span>
           </div>
         </div>
 
         {/* Price */}
         <div className="flex items-center gap-2 mb-6">
-          <span className="font-display text-2xl text-primary">₪{retreat.price}</span>
-          {retreat.originalPrice && (
-            <span className="font-body text-muted-foreground line-through">₪{retreat.originalPrice}</span>
-          )}
+          <span className="font-body text-sm text-muted-foreground">החל מ-</span>
+          <span className="font-display text-2xl text-primary">₪{getCurrentPrice()}</span>
         </div>
 
         {/* Actions */}

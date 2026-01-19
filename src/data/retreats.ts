@@ -1,11 +1,20 @@
 import heroImage from "@/assets/hero-retreat.jpg";
-import healingImage from "@/assets/retreat-healing.jpg";
+import sinaiImage from "@/assets/retreat-healing.jpg";
+
+export interface PriceTier {
+  name: string;
+  price: number;
+  spots: number;
+  spotsLeft: number;
+  status: "available" | "sold-out";
+}
 
 export interface Retreat {
   id: string;
   title: string;
   subtitle: string;
   date: string;
+  dateRange?: string;
   location: string;
   price: number;
   originalPrice?: number;
@@ -16,6 +25,15 @@ export interface Retreat {
   highlights: string[];
   whatsappLink: string;
   status: "upcoming" | "sold-out" | "past";
+  forWomen?: boolean;
+  priceTiers?: PriceTier[];
+  schedule?: {
+    day: string;
+    activities: string[];
+  }[];
+  includes?: string[];
+  cancellationPolicy?: string[];
+  facilitators?: string[];
 }
 
 export const retreats: Retreat[] = [
@@ -38,27 +56,99 @@ export const retreats: Retreat[] = [
       "מתנה מיוחדת לכל משתתפת"
     ],
     whatsappLink: "https://wa.me/message/X3ASE2JKXDO7J1",
-    status: "upcoming"
+    status: "upcoming",
+    forWomen: true,
+    facilitators: ["נועה", "קורל"],
+    priceTiers: [
+      { name: "7 הראשונות", price: 660, spots: 7, spotsLeft: 0, status: "sold-out" },
+      { name: "7 הבאות", price: 720, spots: 7, spotsLeft: 7, status: "available" },
+      { name: "7 האחרונות", price: 780, spots: 7, spotsLeft: 7, status: "available" }
+    ]
   },
   {
-    id: "healing-circle-march-2026",
-    title: "מעגל ריפוי",
-    subtitle: "מסע פנימי של ריפוי וחיבור לאנרגיה הנשית",
-    date: "21/03/2026",
-    location: "הרצליה",
-    price: 650,
-    spots: 15,
-    spotsLeft: 15,
-    image: healingImage,
-    description: "מעגל נשים אינטימי המשלב טכניקות ריפוי, מדיטציה מונחית וסאונד הילינג. חוויה עמוקה שמחברת אותך לכוח הפנימי שלך.",
+    id: "sinai-yoga-march-2026",
+    title: "חופשת יוגה בסיני הקסומה",
+    subtitle: "4 ימים של יוגה, טבע ושקט במדבר הסיני",
+    date: "25/03/2026",
+    dateRange: "25-28.3.2026",
+    location: "קאמפ מלדיב ביץ׳, אל מאש, סיני",
+    price: 1880,
+    spots: 30,
+    spotsLeft: 30,
+    image: sinaiImage,
+    description: "חופשת יוגה בלתי נשכחת בסיני הקסום. 4 ימים של תרגול, טיולים, שנורקלינג ושקט במדבר. מתאים לכולם - נשים וגברים כאחד.",
     highlights: [
-      "סאונד הילינג",
-      "מדיטציה מונחית",
-      "מעגל שיתוף",
-      "תה וכיבוד קל"
+      "שיעורי יוגה יומיים",
+      "מדיטציה וסאונד הילינג",
+      "טיול שקיעה במדבר",
+      "שנורקלינג בים סוף",
+      "לינה בבקתות מפנקות"
     ],
     whatsappLink: "https://wa.me/message/X3ASE2JKXDO7J1",
-    status: "upcoming"
+    status: "upcoming",
+    forWomen: false,
+    facilitators: ["נועה לונה", "מנחים אורחים"],
+    priceTiers: [
+      { name: "10 הראשונים (Early Bird)", price: 1880, spots: 10, spotsLeft: 10, status: "available" },
+      { name: "10 הבאים", price: 2180, spots: 10, spotsLeft: 10, status: "available" },
+      { name: "10 האחרונים", price: 2380, spots: 10, spotsLeft: 10, status: "available" }
+    ],
+    schedule: [
+      {
+        day: "יום 1 - הגעה והתכנסות",
+        activities: [
+          "התארגנות בחדרים והיכרות ראשונית",
+          "מעגל פתיחה",
+          "תרגול יוגה עדין",
+          "ארוחת ערב מזינה"
+        ]
+      },
+      {
+        day: "יום 2 - תנועה וחזון",
+        activities: [
+          "יוגה של בוקר",
+          "ארוחת בוקר מפנקת",
+          "סדנאת מיינדפולנס",
+          "זמן מנוחה",
+          "סדנאת חזון לשנה החדשה",
+          "ארוחת ערב מזינה"
+        ]
+      },
+      {
+        day: "יום 3 - תנועה ומשחק",
+        activities: [
+          "יוגה של בוקר",
+          "ארוחת בוקר מפנקת",
+          "שנורקלינג",
+          "זמן מנוחה",
+          "טיול שקיעה",
+          "סדנאת מובמנט",
+          "ארוחת ערב + מסיבה"
+        ]
+      },
+      {
+        day: "יום 4 - סיום ואינטגרציה",
+        activities: [
+          "יוגה של בוקר",
+          "ארוחת בוקר מפנקת",
+          "מעגל סיום",
+          "פרידות ויציאה הביתה"
+        ]
+      }
+    ],
+    includes: [
+      "3 לילות בקאמפ מלדיב ביץ׳ (בקתות מפנקות)",
+      "הסעות מהגבול ובחזרה",
+      "2 ארוחות צמחוניות מלאות ביום",
+      "שתייה חמה, פירות ונשנושים כל היום",
+      "כל שיעורי היוגה והסדנאות",
+      "מתנה אישית לכל משתתף/ת"
+    ],
+    cancellationPolicy: [
+      "ביטול עד 7 ימים לפני הריטריט – תשלום מקדמה בלבד",
+      "ביטול פחות מ-7 ימים לפני הריטריט – תשלום מלא",
+      "ניתן להעביר את המקום למשתתף/ת אחר/ת בתיאום מראש"
+    ]
   }
 ];
 

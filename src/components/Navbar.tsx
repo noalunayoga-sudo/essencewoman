@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Navbar = () => {
@@ -21,7 +21,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="font-display text-2xl font-semibold text-foreground">
-            ESSENCE
+            נועה לונה
           </Link>
 
           {/* Desktop Navigation */}
@@ -37,13 +37,25 @@ const Navbar = () => {
                 {link.label}
               </Link>
             ))}
+            
+            {/* Social Links */}
+            <a
+              href="https://www.instagram.com/noa_luna_yoga"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-foreground/70 hover:text-primary transition-colors"
+              aria-label="Instagram"
+            >
+              <Instagram size={20} />
+            </a>
+            
             <Button variant="default" size="sm" asChild>
               <a
                 href="https://wa.me/message/X3ASE2JKXDO7J1"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                להרשמה
+                צרו קשר
               </a>
             </Button>
           </div>
@@ -74,6 +86,29 @@ const Navbar = () => {
                   {link.label}
                 </Link>
               ))}
+              
+              {/* Mobile Social Links */}
+              <div className="flex gap-4 px-4 py-2">
+                <a
+                  href="https://www.instagram.com/noa_luna_yoga"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-foreground/70 hover:text-primary transition-colors"
+                  aria-label="Instagram"
+                >
+                  <Instagram size={24} />
+                </a>
+                <a
+                  href="https://www.facebook.com/noa.matityau/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-foreground/70 hover:text-primary transition-colors"
+                  aria-label="Facebook"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                </a>
+              </div>
+              
               <div className="px-4 pt-2">
                 <Button variant="default" size="sm" className="w-full" asChild>
                   <a
@@ -81,7 +116,7 @@ const Navbar = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    להרשמה
+                    צרו קשר
                   </a>
                 </Button>
               </div>

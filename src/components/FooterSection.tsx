@@ -29,7 +29,7 @@ const FooterSection = () => {
         <div className="mt-16 pt-8 border-t border-background/20">
           <p className="font-display text-3xl mb-4">ESSENCE</p>
           <p className="font-body text-background/60 text-sm">
-            נוצר באהבה על ידי נועה וקורל © 2026
+            ריטריט ESSENCE נוצר בשיתוף נועה וקורל © 2026
           </p>
         </div>
       </div>
