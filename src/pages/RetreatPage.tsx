@@ -77,6 +77,27 @@ const RetreatPage = () => {
         <ForWhoSection />
         <TestimonialsSection />
         <PricingSection />
+
+        {/* Final CTA */}
+        <section className="section-padding bg-primary/10">
+          <div className="container max-w-4xl mx-auto text-center">
+            <h2 className="font-display text-4xl md:text-5xl text-foreground mb-6">
+              מוכנה להצטרף?
+            </h2>
+            <p className="font-body text-xl text-muted-foreground mb-8">
+              יש לך שאלות? רוצה לשמור מקום? דברי איתנו
+            </p>
+            <Button variant="whatsapp" size="xl" asChild>
+              <a
+                href={retreat.whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                להצטרפות
+              </a>
+            </Button>
+          </div>
+        </section>
       </Layout>
     );
   }
