@@ -22,7 +22,7 @@ const Home = () => {
 
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto animate-fade-in">
           <h1 className="font-display text-6xl md:text-8xl font-semibold tracking-wide text-white mb-6 drop-shadow-lg">
-            נועה לונה
+            Noa Luna
           </h1>
           
           <p className="font-body text-xl md:text-2xl text-white/95 mb-8 font-light drop-shadow-md max-w-2xl mx-auto">

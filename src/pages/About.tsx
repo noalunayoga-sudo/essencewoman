@@ -58,7 +58,7 @@ const About = () => {
               
               <div className="text-center md:text-right">
                 <h2 className="font-display text-4xl text-foreground mb-6">
-                  נועה לונה
+                  Noa Luna
                 </h2>
                 
                 <div className="font-body text-foreground/80 leading-relaxed space-y-4">
@@ -91,15 +91,6 @@ const About = () => {
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* ESSENCE Collaboration Note */}
-      <section className="py-8">
-        <div className="container max-w-4xl mx-auto text-center">
-          <p className="font-body text-muted-foreground italic">
-            ריטריט ESSENCE נוצר בשיתוף עם קורל, שותפה מיוחדת לפרויקט הנשי הזה.
-          </p>
         </div>
       </section>
 
