@@ -99,9 +99,9 @@ const PricingSection = () => {
             href="https://wa.me/message/X3ASE2JKXDO7J1"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#128C7E] text-white font-body text-lg px-8 py-4 rounded-full transition-colors shadow-lg"
+            className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-body text-lg px-8 py-4 rounded-full transition-colors shadow-lg"
           >
-            להרשמה בוואטסאפ
+            להרשמה
           </a>
         </div>
 
