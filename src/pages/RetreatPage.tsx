@@ -18,16 +18,16 @@ const SinaiIntroSection = () => (
   <section className="section-padding bg-secondary">
     <div className="container max-w-4xl mx-auto text-center">
       <h2 className="font-display text-4xl md:text-5xl text-foreground mb-6">
-        קחו רגע לעצמכם
+        חופשה שזה לא רק חופשה
       </h2>
       
       <p className="font-display text-2xl text-primary mb-4 italic">
-        4 ימים של שקט, תנועה וטבע במדבר הסיני
+        4 ימים של כיף, חיבור אנושי ורגעים בלתי נשכחים
       </p>
       
       <p className="font-body text-xl text-muted-foreground mb-8 leading-relaxed max-w-2xl mx-auto">
-        חופשה שמזמינה אתכם לעצור, לנשום עמוק, ולהתחבר מחדש לעצמכם ולטבע.
-        יוגה מול הים, טיולים במדבר, שנורקלינג, ושקט אמיתי.
+        יוגה מול הים, שנורקלינג, טיולים, ערבים קסומים, אנשים מדהימים, 
+        ובעיקר - הרבה כיף ושקט מהשגרה. חופשה שמחזירה אתכם הביתה רעננים ומלאי אנרגיה.
       </p>
 
       <blockquote className="font-body text-foreground/80 text-lg border-r-4 border-primary pr-4 italic text-right max-w-2xl mx-auto">
