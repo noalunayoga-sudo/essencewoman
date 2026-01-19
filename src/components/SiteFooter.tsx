@@ -8,7 +8,7 @@ const SiteFooter = () => {
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           {/* Brand */}
           <div className="text-center md:text-right">
-            <h3 className="font-display text-2xl mb-4">נועה לונה</h3>
+            <h3 className="font-display text-2xl mb-4">Noa Luna</h3>
             <p className="font-body text-background/70 text-sm">
               יוגה, תנועה וחיבור
             </p>
@@ -69,7 +69,7 @@ const SiteFooter = () => {
 
         <div className="border-t border-background/20 pt-8 text-center">
           <p className="font-body text-background/60 text-sm">
-            נוצר באהבה על ידי נועה לונה © 2026
+            Noa Luna © 2026
           </p>
         </div>
       </div>
