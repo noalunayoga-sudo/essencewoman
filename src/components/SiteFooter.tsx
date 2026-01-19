@@ -8,9 +8,13 @@ const SiteFooter = () => {
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           {/* Brand */}
           <div className="text-center md:text-right">
-            <h3 className="font-display text-2xl mb-4">Noa Luna</h3>
-            <p className="font-body text-background/70 text-sm">
-              יוגה, תנועה וחיבור
+            <h3 className="font-display text-2xl mb-2">נועה מתתיהו</h3>
+            <p className="font-body text-background/80 text-sm italic mb-2">
+              Wellness & Lifestyle
+            </p>
+            <p className="font-body text-background/60 text-sm">
+              מחברת אנשים לעצמם ולאחרים<br />
+              מתוך מקום של רכות, שמחה וקבלה
             </p>
           </div>
 
@@ -69,7 +73,7 @@ const SiteFooter = () => {
 
         <div className="border-t border-background/20 pt-8 text-center">
           <p className="font-body text-background/60 text-sm">
-            Noa Luna © 2026
+            נועה מתתיהו © 2026
           </p>
         </div>
       </div>
