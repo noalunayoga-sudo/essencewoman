@@ -250,8 +250,13 @@ const SinaiAboutSection = () => (
             className="w-48 h-48 rounded-full object-cover shadow-lg"
           />
           <div className="text-center md:text-right">
-            <h3 className="font-display text-3xl text-primary mb-4">נועה מתתיהו</h3>
+            <h3 className="font-display text-3xl text-primary mb-2">נועה מתתיהו</h3>
+            <p className="font-body text-sm text-muted-foreground mb-4 italic">
+              Wellness & Lifestyle
+            </p>
             <p className="font-body text-foreground/80 leading-relaxed">
+              מחברת אנשים לעצמם ולאחרים מתוך מקום של רכות, שמחה וקבלה.
+              <br /><br />
               מורה ותלמידה של היוגה כבר יותר מעשור. מנחה סדנאות, מלווה תהליכים, 
               ויוצרת מרחבים שמזמינים חיבור אמיתי לגוף ולנפש.
               <br /><br />
