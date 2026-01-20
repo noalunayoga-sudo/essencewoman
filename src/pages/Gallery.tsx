@@ -9,7 +9,6 @@ import beachReflection from "@/assets/gallery/beach-reflection.jpg";
 import swingSunset from "@/assets/gallery/swing-sunset.jpg";
 import yogaWarrior from "@/assets/gallery/yoga-warrior.jpg";
 import boatAdventure from "@/assets/gallery/boat-adventure.jpg";
-import noaSmiling from "@/assets/gallery/noa-smiling.jpg";
 
 interface GalleryImage {
   src: string;
@@ -27,7 +26,6 @@ const galleryImages: GalleryImage[] = [
   { src: swingSunset, alt: "נדנדה בשקיעה", span: "tall" },
   { src: yogaWarrior, alt: "תנוחת לוחם", span: "normal" },
   { src: groupSupport, alt: "תמיכה קבוצתית", span: "normal" },
-  { src: noaSmiling, alt: "נועה", span: "normal" },
   { src: boatAdventure, alt: "הרפתקה בים", span: "wide" },
 ];
 
