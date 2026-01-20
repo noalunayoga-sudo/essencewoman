@@ -1,5 +1,4 @@
 import Layout from "@/components/Layout";
-import heroImage from "@/assets/hero-retreat.jpg";
 import healingImage from "@/assets/retreat-healing.jpg";
 import brunchImage from "@/assets/brunch.jpg";
 import mandalaImage from "@/assets/mandala.jpg";
@@ -15,14 +14,13 @@ interface GalleryImage {
 }
 
 const galleryImages: GalleryImage[] = [
-  { src: heroImage, alt: "נשים בריטריט", span: "wide" },
+  { src: healingSessionImage, alt: "טיפול ריפוי", span: "wide" },
   { src: healingImage, alt: "סדנת ריפוי", span: "tall" },
   { src: brunchImage, alt: "ארוחת בראנץ׳", span: "normal" },
   { src: mandalaImage, alt: "מנדלה", span: "normal" },
-  { src: healingSessionImage, alt: "טיפול ריפוי", span: "wide" },
   { src: retreatMoment1, alt: "רגע מהריטריט", span: "normal" },
   { src: retreatMoment2, alt: "חוויה קבוצתית", span: "tall" },
-  { src: retreatMoment3, alt: "רגע של שקט", span: "normal" },
+  { src: retreatMoment3, alt: "רגע של שקט", span: "wide" },
 ];
 
 const Gallery = () => {
