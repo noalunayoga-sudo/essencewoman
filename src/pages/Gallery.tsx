@@ -1,11 +1,15 @@
 import Layout from "@/components/Layout";
-import brunchImage from "@/assets/brunch.jpg";
 import healingSessionImage from "@/assets/gallery/healing-session.jpg";
-import retreatMoment1 from "@/assets/gallery/retreat-moment-1.jpg";
-import retreatMoment2 from "@/assets/gallery/retreat-moment-2.jpg";
-import retreatMoment3 from "@/assets/gallery/retreat-moment-3.jpg";
-import yogaGroupImage from "@/assets/gallery/yoga-group-outdoor.jpg";
-import womenConnectionImage from "@/assets/women-connection.jpg";
+import yogaSunsetDeck from "@/assets/gallery/yoga-sunset-deck.jpg";
+import circleSunset from "@/assets/gallery/circle-sunset.jpg";
+import handstandDuo from "@/assets/gallery/handstand-duo.jpg";
+import groupCircle from "@/assets/gallery/group-circle.jpg";
+import groupSupport from "@/assets/gallery/group-support.jpg";
+import beachReflection from "@/assets/gallery/beach-reflection.jpg";
+import swingSunset from "@/assets/gallery/swing-sunset.jpg";
+import yogaWarrior from "@/assets/gallery/yoga-warrior.jpg";
+import boatAdventure from "@/assets/gallery/boat-adventure.jpg";
+import noaSmiling from "@/assets/gallery/noa-smiling.jpg";
 
 interface GalleryImage {
   src: string;
@@ -14,13 +18,17 @@ interface GalleryImage {
 }
 
 const galleryImages: GalleryImage[] = [
-  { src: healingSessionImage, alt: "טיפול ריפוי", span: "wide" },
-  { src: retreatMoment1, alt: "רגע מהריטריט", span: "tall" },
-  { src: brunchImage, alt: "ארוחת בראנץ׳", span: "normal" },
-  { src: yogaGroupImage, alt: "יוגה קבוצתית", span: "normal" },
-  { src: womenConnectionImage, alt: "חיבור נשי", span: "wide" },
-  { src: retreatMoment2, alt: "חוויה קבוצתית", span: "normal" },
-  { src: retreatMoment3, alt: "רגע של שקט", span: "normal" },
+  { src: yogaSunsetDeck, alt: "יוגה בשקיעה", span: "wide" },
+  { src: beachReflection, alt: "רגע של שקט", span: "tall" },
+  { src: handstandDuo, alt: "עמידת ידיים זוגית", span: "normal" },
+  { src: healingSessionImage, alt: "טיפול ריפוי", span: "normal" },
+  { src: circleSunset, alt: "מעגל שיתוף", span: "wide" },
+  { src: groupCircle, alt: "חיבור קבוצתי", span: "normal" },
+  { src: swingSunset, alt: "נדנדה בשקיעה", span: "tall" },
+  { src: yogaWarrior, alt: "תנוחת לוחם", span: "normal" },
+  { src: groupSupport, alt: "תמיכה קבוצתית", span: "normal" },
+  { src: noaSmiling, alt: "נועה", span: "normal" },
+  { src: boatAdventure, alt: "הרפתקה בים", span: "wide" },
 ];
 
 const Gallery = () => {
@@ -66,15 +74,6 @@ const Gallery = () => {
             ))}
           </div>
 
-          {/* Coming Soon */}
-          <div className="mt-16 text-center">
-            <p className="font-body text-muted-foreground text-lg mb-4">
-              עוד תמונות יתווספו בקרוב...
-            </p>
-            <p className="font-body text-muted-foreground">
-              עקבו אחרינו ברשתות החברתיות לעדכונים
-            </p>
-          </div>
         </div>
       </section>
     </Layout>
