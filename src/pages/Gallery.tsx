@@ -9,6 +9,7 @@ import beachReflection from "@/assets/gallery/beach-reflection.jpg";
 import swingSunset from "@/assets/gallery/swing-sunset.jpg";
 import yogaWarrior from "@/assets/gallery/yoga-warrior.jpg";
 import boatAdventure from "@/assets/gallery/boat-adventure.jpg";
+import yogaStretch from "@/assets/gallery/yoga-stretch.jpg";
 
 interface GalleryImage {
   src: string;
@@ -25,8 +26,9 @@ const galleryImages: GalleryImage[] = [
   { src: groupCircle, alt: "חיבור קבוצתי", span: "normal" },
   { src: swingSunset, alt: "נדנדה בשקיעה", span: "tall" },
   { src: yogaWarrior, alt: "תנוחת לוחם", span: "normal" },
+  { src: yogaStretch, alt: "יוגה", span: "tall" },
   { src: groupSupport, alt: "תמיכה קבוצתית", span: "normal" },
-  { src: boatAdventure, alt: "הרפתקה בים", span: "tall" },
+  { src: boatAdventure, alt: "הרפתקה בים", span: "normal" },
 ];
 
 const Gallery = () => {
