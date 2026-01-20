@@ -13,6 +13,7 @@ import yogaStretch from "@/assets/gallery/yoga-stretch.jpg";
 import yogaGroupArms from "@/assets/gallery/yoga-group-arms.jpg";
 import yogaSeaside from "@/assets/gallery/yoga-seaside.jpg";
 import yogaDeckPractice from "@/assets/gallery/yoga-deck-practice.jpg";
+import seasideMoment from "@/assets/gallery/seaside-moment.jpg";
 
 interface GalleryImage {
   src: string;
@@ -35,6 +36,7 @@ const galleryImages: GalleryImage[] = [
   { src: groupSupport, alt: "תמיכה קבוצתית", span: "normal" },
   { src: yogaSeaside, alt: "יוגה ליד הים", span: "tall" },
   { src: yogaDeckPractice, alt: "תרגול על הדק", span: "normal" },
+  { src: seasideMoment, alt: "רגע ליד הים", span: "wide" },
 ];
 
 const Gallery = () => {
