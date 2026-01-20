@@ -10,6 +10,8 @@ import swingSunset from "@/assets/gallery/swing-sunset.jpg";
 import yogaWarrior from "@/assets/gallery/yoga-warrior.jpg";
 import boatAdventure from "@/assets/gallery/boat-adventure.jpg";
 import yogaStretch from "@/assets/gallery/yoga-stretch.jpg";
+import yogaGroupArms from "@/assets/gallery/yoga-group-arms.jpg";
+import yogaSeaside from "@/assets/gallery/yoga-seaside.jpg";
 
 interface GalleryImage {
   src: string;
@@ -22,12 +24,14 @@ const galleryImages: GalleryImage[] = [
   { src: beachReflection, alt: "רגע של שקט", span: "tall" },
   { src: handstandDuo, alt: "עמידת ידיים זוגית", span: "normal" },
   { src: healingSessionImage, alt: "טיפול ריפוי", span: "normal" },
-  { src: circleSunset, alt: "מעגל שיתוף", span: "wide" },
+  { src: yogaGroupArms, alt: "יוגה קבוצתית", span: "wide" },
   { src: groupCircle, alt: "חיבור קבוצתי", span: "normal" },
   { src: swingSunset, alt: "נדנדה בשקיעה", span: "tall" },
   { src: yogaWarrior, alt: "תנוחת לוחם", span: "normal" },
   { src: yogaStretch, alt: "יוגה", span: "tall" },
+  { src: circleSunset, alt: "מעגל שיתוף", span: "wide" },
   { src: groupSupport, alt: "תמיכה קבוצתית", span: "normal" },
+  { src: yogaSeaside, alt: "יוגה ליד הים", span: "tall" },
   { src: boatAdventure, alt: "הרפתקה בים", span: "normal" },
 ];
 
