@@ -19,6 +19,8 @@ interface GalleryImage {
   src: string;
   alt: string;
   span?: "wide" | "tall" | "normal";
+  colStart?: 1 | 2 | 3;
+  rowStart?: number;
 }
 
 const galleryImages: GalleryImage[] = [
@@ -63,7 +65,9 @@ const Gallery = () => {
                 key={index}
                 className={`relative overflow-hidden rounded-2xl shadow-elevated group cursor-pointer ${
                   image.span === "wide" ? "md:col-span-2" : ""
-                } ${image.span === "tall" ? "md:row-span-2" : ""}`}
+                } ${image.span === "tall" ? "md:row-span-2" : ""} ${
+                  image.colStart ? `md:col-start-${image.colStart}` : ""
+                } ${image.rowStart ? `md:row-start-${image.rowStart}` : ""}`}
               >
                 <img
                   src={image.src}
