@@ -1,5 +1,5 @@
 import heroImage from "@/assets/hero-retreat.jpg";
-import sinaiImage from "@/assets/retreat-healing.jpg";
+import sinaiImage from "@/assets/sinai-retreat.jpg";
 
 export interface PriceTier {
   name: string;
