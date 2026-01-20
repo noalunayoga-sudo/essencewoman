@@ -1,11 +1,12 @@
 import Layout from "@/components/Layout";
-import healingImage from "@/assets/retreat-healing.jpg";
 import brunchImage from "@/assets/brunch.jpg";
 import mandalaImage from "@/assets/mandala.jpg";
 import healingSessionImage from "@/assets/gallery/healing-session.jpg";
 import retreatMoment1 from "@/assets/gallery/retreat-moment-1.jpg";
 import retreatMoment2 from "@/assets/gallery/retreat-moment-2.jpg";
 import retreatMoment3 from "@/assets/gallery/retreat-moment-3.jpg";
+import yogaGroupImage from "@/assets/gallery/yoga-group-outdoor.jpg";
+import womenConnectionImage from "@/assets/women-connection.jpg";
 
 interface GalleryImage {
   src: string;
@@ -15,12 +16,13 @@ interface GalleryImage {
 
 const galleryImages: GalleryImage[] = [
   { src: healingSessionImage, alt: "טיפול ריפוי", span: "wide" },
-  { src: healingImage, alt: "סדנת ריפוי", span: "tall" },
+  { src: retreatMoment1, alt: "רגע מהריטריט", span: "tall" },
   { src: brunchImage, alt: "ארוחת בראנץ׳", span: "normal" },
   { src: mandalaImage, alt: "מנדלה", span: "normal" },
-  { src: retreatMoment1, alt: "רגע מהריטריט", span: "normal" },
-  { src: retreatMoment2, alt: "חוויה קבוצתית", span: "tall" },
-  { src: retreatMoment3, alt: "רגע של שקט", span: "wide" },
+  { src: yogaGroupImage, alt: "יוגה קבוצתית", span: "wide" },
+  { src: retreatMoment2, alt: "חוויה קבוצתית", span: "normal" },
+  { src: womenConnectionImage, alt: "חיבור נשי", span: "tall" },
+  { src: retreatMoment3, alt: "רגע של שקט", span: "normal" },
 ];
 
 const Gallery = () => {
