@@ -1,6 +1,5 @@
 import Layout from "@/components/Layout";
 import brunchImage from "@/assets/brunch.jpg";
-import mandalaImage from "@/assets/mandala.jpg";
 import healingSessionImage from "@/assets/gallery/healing-session.jpg";
 import retreatMoment1 from "@/assets/gallery/retreat-moment-1.jpg";
 import retreatMoment2 from "@/assets/gallery/retreat-moment-2.jpg";
@@ -18,10 +17,9 @@ const galleryImages: GalleryImage[] = [
   { src: healingSessionImage, alt: "טיפול ריפוי", span: "wide" },
   { src: retreatMoment1, alt: "רגע מהריטריט", span: "tall" },
   { src: brunchImage, alt: "ארוחת בראנץ׳", span: "normal" },
-  { src: mandalaImage, alt: "מנדלה", span: "normal" },
-  { src: yogaGroupImage, alt: "יוגה קבוצתית", span: "wide" },
+  { src: yogaGroupImage, alt: "יוגה קבוצתית", span: "normal" },
+  { src: womenConnectionImage, alt: "חיבור נשי", span: "wide" },
   { src: retreatMoment2, alt: "חוויה קבוצתית", span: "normal" },
-  { src: womenConnectionImage, alt: "חיבור נשי", span: "tall" },
   { src: retreatMoment3, alt: "רגע של שקט", span: "normal" },
 ];
 
