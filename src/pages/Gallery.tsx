@@ -26,7 +26,7 @@ const galleryImages: GalleryImage[] = [
   { src: swingSunset, alt: "נדנדה בשקיעה", span: "tall" },
   { src: yogaWarrior, alt: "תנוחת לוחם", span: "normal" },
   { src: groupSupport, alt: "תמיכה קבוצתית", span: "normal" },
-  { src: boatAdventure, alt: "הרפתקה בים", span: "wide" },
+  { src: boatAdventure, alt: "הרפתקה בים", span: "tall" },
 ];
 
 const Gallery = () => {
@@ -62,12 +62,7 @@ const Gallery = () => {
                     image.span === "tall" ? "h-full min-h-[400px]" : "h-64 md:h-80"
                   }`}
                 />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300" />
-                <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span className="font-body text-white text-sm bg-black/50 px-3 py-1 rounded-full">
-                    {image.alt}
-                  </span>
-                </div>
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
               </div>
             ))}
           </div>
