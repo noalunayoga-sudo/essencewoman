@@ -12,6 +12,7 @@ import boatAdventure from "@/assets/gallery/boat-adventure.jpg";
 import yogaStretch from "@/assets/gallery/yoga-stretch.jpg";
 import yogaGroupArms from "@/assets/gallery/yoga-group-arms.jpg";
 import yogaSeaside from "@/assets/gallery/yoga-seaside.jpg";
+import yogaDeckPractice from "@/assets/gallery/yoga-deck-practice.jpg";
 
 interface GalleryImage {
   src: string;
@@ -32,6 +33,7 @@ const galleryImages: GalleryImage[] = [
   { src: circleSunset, alt: "מעגל שיתוף", span: "wide" },
   { src: groupSupport, alt: "תמיכה קבוצתית", span: "normal" },
   { src: yogaSeaside, alt: "יוגה ליד הים", span: "tall" },
+  { src: yogaDeckPractice, alt: "תרגול על הדק", span: "tall" },
   { src: boatAdventure, alt: "הרפתקה בים", span: "normal" },
 ];
 
