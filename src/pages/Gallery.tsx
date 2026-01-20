@@ -29,12 +29,12 @@ const galleryImages: GalleryImage[] = [
   { src: groupCircle, alt: "חיבור קבוצתי", span: "normal" },
   { src: swingSunset, alt: "נדנדה בשקיעה", span: "tall" },
   { src: yogaWarrior, alt: "תנוחת לוחם", span: "normal" },
+  { src: boatAdventure, alt: "הרפתקה בים", span: "normal" },
   { src: yogaStretch, alt: "יוגה", span: "tall" },
   { src: circleSunset, alt: "מעגל שיתוף", span: "wide" },
   { src: groupSupport, alt: "תמיכה קבוצתית", span: "normal" },
   { src: yogaSeaside, alt: "יוגה ליד הים", span: "tall" },
-  { src: yogaDeckPractice, alt: "תרגול על הדק", span: "tall" },
-  { src: boatAdventure, alt: "הרפתקה בים", span: "normal" },
+  { src: yogaDeckPractice, alt: "תרגול על הדק", span: "normal" },
 ];
 
 const Gallery = () => {
