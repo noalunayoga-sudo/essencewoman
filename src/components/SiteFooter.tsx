@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Instagram } from "lucide-react";
+import { Instagram, Phone } from "lucide-react";
 
 const SiteFooter = () => {
   return (
@@ -36,7 +36,14 @@ const SiteFooter = () => {
 
           {/* Contact */}
           <div className="text-center md:text-left">
-            <h4 className="font-display text-lg mb-4">עקבו אחריי</h4>
+            <h4 className="font-display text-lg mb-4">צרו קשר</h4>
+            <a 
+              href="tel:+972545752288" 
+              className="font-body text-background/70 hover:text-background transition-colors flex items-center justify-center md:justify-start gap-2 mb-4"
+            >
+              <Phone size={18} />
+              <span dir="ltr">054-575-2288</span>
+            </a>
             <div className="flex justify-center md:justify-start gap-4">
               <a
                 href="https://www.instagram.com/noa_luna_yoga"
