@@ -75,7 +75,7 @@ const PrivateEvents = () => {
               </a>
             </Button>
             <Button variant="outline" size="xl" className="bg-white/10 border-white text-white hover:bg-white/20" asChild>
-              <a href="tel:+972000000000">
+              <a href="tel:+972545752288">
                 התקשרו אלינו
               </a>
             </Button>
@@ -239,7 +239,7 @@ const PrivateEvents = () => {
               </a>
             </Button>
             <Button variant="outline" size="xl" asChild>
-              <a href="tel:+972000000000">
+              <a href="tel:+972545752288">
                 התקשרו אלינו
               </a>
             </Button>
