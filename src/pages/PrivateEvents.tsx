@@ -182,7 +182,7 @@ const PrivateEvents = () => {
               </div>
               <h3 className="font-display text-lg text-foreground mb-2">סדנאות</h3>
               <p className="font-body text-sm text-foreground/70">
-                טוורק, ריקוד, נשימות, מדיטציה, סאונד הילינג, ריברסינג, אמבטיית קרח, מודעות למחזוריות, נטורופתיה, יצירה, הכנת נרות ועוד..
+                טוורק, ריקוד, מדיטציה, סאונד הילינג, אמבטיית קרח, יצירה, הכנת נרות ועוד..
               </p>
             </div>
 
