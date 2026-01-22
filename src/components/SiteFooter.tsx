@@ -35,16 +35,16 @@ const SiteFooter = () => {
           </div>
 
           {/* Contact */}
-          <div className="text-center md:text-right">
+          <div className="text-center md:text-right flex flex-col items-center md:items-end">
             <h4 className="font-display text-lg mb-4">צרו קשר</h4>
             <a 
               href="tel:+972545752288" 
-              className="font-body text-background/70 hover:text-background transition-colors flex items-center justify-center md:justify-end gap-2 mb-4"
+              className="font-body text-background/70 hover:text-background transition-colors flex items-center gap-2 mb-4"
             >
-              <Phone size={18} />
               <span dir="ltr">054-575-2288</span>
+              <Phone size={18} />
             </a>
-            <div className="flex justify-center md:justify-end gap-4">
+            <div className="flex gap-4">
               <a
                 href="https://www.instagram.com/noa_luna_yoga"
                 target="_blank"
