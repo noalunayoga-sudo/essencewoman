@@ -465,8 +465,8 @@ const RetreatPage = () => {
     );
   }
 
-  // For Sinai retreat, show dedicated page
-  if (retreat.id === "sinai-yoga-march-2026") {
+  // For Sinai retreats, show dedicated page
+  if (retreat.id === "sinai-yoga-march-2026" || retreat.id === "sinai-yoga-may-2026") {
     return (
       <Layout>
         {/* Hero */}
