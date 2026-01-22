@@ -32,14 +32,23 @@ const Home = () => {
           <p className="font-body text-xl md:text-2xl text-white/95 mb-8 font-light drop-shadow-md max-w-2xl mx-auto">
             ריטריטים וחופשות יוגה בארץ ובעולם.
             <br />
+            אירועים פרטיים ועסקיים.
+            <br />
             מרחב לעצור, לנשום ולהתחבר.
           </p>
 
-          <Button variant="hero" size="xl" asChild>
-            <a href="#retreats">
-              לריטריטים הקרובים
-            </a>
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button variant="hero" size="xl" asChild>
+              <a href="#retreats">
+                לריטריטים הקרובים
+              </a>
+            </Button>
+            <Button variant="outline" size="xl" className="bg-white/10 border-white text-white hover:bg-white/20" asChild>
+              <a href="#events">
+                לאירועים פרטיים
+              </a>
+            </Button>
+          </div>
         </div>
       </section>
 
@@ -64,7 +73,7 @@ const Home = () => {
       </section>
 
       {/* Private & Corporate Events Section */}
-      <section className="section-padding">
+      <section id="events" className="section-padding">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="font-display text-4xl md:text-5xl text-foreground mb-4">
