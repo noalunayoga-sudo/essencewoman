@@ -1,8 +1,12 @@
+import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import RetreatCard from "@/components/RetreatCard";
 import { Button } from "@/components/ui/button";
 import { getUpcomingRetreats } from "@/data/retreats";
+import { Heart, Building2 } from "lucide-react";
 import heroImage from "@/assets/hero-home.jpg";
+import womenConnection from "@/assets/women-connection.jpg";
+import heroWellness from "@/assets/hero-wellness.jpg";
 
 const Home = () => {
   const upcomingRetreats = getUpcomingRetreats();
@@ -55,6 +59,82 @@ const Home = () => {
             {upcomingRetreats.map((retreat) => (
               <RetreatCard key={retreat.id} retreat={retreat} />
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Private & Corporate Events Section */}
+      <section className="section-padding">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="font-display text-4xl md:text-5xl text-foreground mb-4">
+              אירועים פרטיים ועסקיים
+            </h2>
+            <p className="font-body text-xl text-muted-foreground">
+              יום כיף מותאם אישית לכל אירוע
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {/* Private Events Card */}
+            <Link to="/private-events" className="group">
+              <div className="gradient-card rounded-3xl overflow-hidden shadow-elevated hover:shadow-2xl transition-all duration-300">
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src={womenConnection}
+                    alt="יום כיף לרווקות"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute bottom-4 right-4 left-4">
+                    <div className="flex items-center gap-2 text-white">
+                      <Heart size={24} />
+                      <h3 className="font-display text-2xl drop-shadow-lg">
+                        יום כיף לרווקות ואירועים פרטיים
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <p className="font-body text-foreground/80 mb-4">
+                    מסיבות רווקות, ימי הולדת, יום כיף לחברות - חוויה מפנקת ובלתי נשכחת
+                  </p>
+                  <span className="font-body text-primary font-medium group-hover:underline">
+                    לפרטים נוספים ←
+                  </span>
+                </div>
+              </div>
+            </Link>
+
+            {/* Corporate Events Card */}
+            <Link to="/corporate-events" className="group">
+              <div className="gradient-card rounded-3xl overflow-hidden shadow-elevated hover:shadow-2xl transition-all duration-300">
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src={heroWellness}
+                    alt="ימי גיבוש לחברות"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute bottom-4 right-4 left-4">
+                    <div className="flex items-center gap-2 text-white">
+                      <Building2 size={24} />
+                      <h3 className="font-display text-2xl drop-shadow-lg">
+                        ימי גיבוש ואירועי חברה
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <p className="font-body text-foreground/80 mb-4">
+                    יום גיבוש Wellness לצוות - יוגה, סדנאות, פעילויות שטח ואוכל טוב
+                  </p>
+                  <span className="font-body text-primary font-medium group-hover:underline">
+                    לפרטים נוספים ←
+                  </span>
+                </div>
+              </div>
+            </Link>
           </div>
         </div>
       </section>
