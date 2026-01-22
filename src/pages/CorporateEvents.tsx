@@ -169,6 +169,10 @@ const CorporateEvents = () => {
               </div>
             ))}
           </div>
+
+          <p className="text-center font-body text-muted-foreground mt-8 text-lg">
+            יש אפשרויות לסדנאות נוספות ומגוונות בהתאם לצרכים ולרצון של הארגון
+          </p>
         </div>
       </section>
 
