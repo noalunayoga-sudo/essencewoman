@@ -174,7 +174,7 @@ const Home = () => {
             יש שאלות?
           </h2>
           <p className="font-body text-xl text-muted-foreground mb-8">
-            אשמח לדבר ולעזור לכם לבחור את הריטריט המתאים
+            אשמח לדבר ולעזור לכם לבחור את החוויה המתאימה עבורכם
           </p>
           <Button variant="whatsapp" size="xl" asChild>
             <a
