@@ -171,10 +171,10 @@ const Home = () => {
       <section className="section-padding bg-primary/10">
         <div className="container max-w-4xl mx-auto text-center">
           <h2 className="font-display text-4xl md:text-5xl text-foreground mb-6">
-            יש שאלות?
+            בואו נבנה יחד את החוויה המושלמת
           </h2>
           <p className="font-body text-xl text-muted-foreground mb-8">
-            אשמח לדבר ולעזור לכם לבחור את הריטריט המתאים
+            ריטריט, יום כיף או אירוע מיוחד - הכל מותאם אישית בדיוק עבורכם
           </p>
           <Button variant="whatsapp" size="xl" asChild>
             <a
