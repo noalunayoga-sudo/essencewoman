@@ -20,7 +20,7 @@ const RetreatCard = ({ retreat }: RetreatCardProps) => {
   };
 
   return (
-    <div className="gradient-card rounded-3xl overflow-hidden shadow-elevated hover:shadow-2xl transition-all duration-300 group">
+    <div className="gradient-card rounded-3xl overflow-hidden shadow-elevated hover:shadow-2xl transition-all duration-300 group flex flex-col h-full">
       {/* Image */}
       <div className="relative h-64 overflow-hidden">
         <img
@@ -54,8 +54,8 @@ const RetreatCard = ({ retreat }: RetreatCardProps) => {
       </div>
 
       {/* Content */}
-      <div className="p-6">
-        <p className="font-body text-foreground/80 mb-4">
+      <div className="p-6 flex flex-col flex-1">
+        <p className="font-body text-foreground/80 mb-4 line-clamp-2">
           {retreat.subtitle}
         </p>
 
@@ -74,6 +74,9 @@ const RetreatCard = ({ retreat }: RetreatCardProps) => {
             <span className="font-body">{retreat.spots} משתתפים</span>
           </div>
         </div>
+
+        {/* Spacer to push price and buttons to bottom */}
+        <div className="flex-1" />
 
         {/* Price */}
         <div className="flex items-center gap-2 mb-6">
