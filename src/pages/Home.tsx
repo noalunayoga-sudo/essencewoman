@@ -6,7 +6,7 @@ import { getUpcomingRetreats } from "@/data/retreats";
 import { Heart, Building2 } from "lucide-react";
 import heroImage from "@/assets/hero-home.jpg";
 import womenConnection from "@/assets/women-connection.jpg";
-import heroWellness from "@/assets/hero-wellness.jpg";
+import corporateImage from "@/assets/gallery/yoga-group-arms.jpg";
 
 const Home = () => {
   const upcomingRetreats = getUpcomingRetreats();
@@ -120,7 +120,7 @@ const Home = () => {
               <div className="gradient-card rounded-3xl overflow-hidden shadow-elevated hover:shadow-2xl transition-all duration-300">
                 <div className="relative h-48 overflow-hidden">
                   <img
-                    src={heroWellness}
+                    src={corporateImage}
                     alt="ימי גיבוש לחברות"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
