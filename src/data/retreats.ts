@@ -67,7 +67,7 @@ export const retreats: Retreat[] = [
   },
   {
     id: "sinai-yoga-march-2026",
-    title: "חופשת יוגה בסיני הקסומה",
+    title: "חופשת יוגה בסיני הקסומה (מרץ)",
     subtitle: "יוגה, ים, מדבר ואנשים טובים",
     date: "18/03/2026",
     dateRange: "18-21/03/2026",
@@ -154,7 +154,7 @@ export const retreats: Retreat[] = [
   },
   {
     id: "sinai-yoga-may-2026",
-    title: "חופשת יוגה בסיני הקסומה",
+    title: "חופשת יוגה בסיני הקסומה (מאי)",
     subtitle: "יוגה, ים, מדבר ואנשים טובים",
     date: "14/05/2026",
     dateRange: "14-17/05/2026",
