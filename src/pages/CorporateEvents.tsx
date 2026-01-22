@@ -1,7 +1,7 @@
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Building2, Users, Target, Heart, Sparkles, Utensils, Mountain, Check } from "lucide-react";
-import heroWellness from "@/assets/hero-wellness.jpg";
+import heroImage from "@/assets/gallery/yoga-group-arms.jpg";
 
 const CorporateEvents = () => {
   const benefits = [
@@ -56,7 +56,7 @@ const CorporateEvents = () => {
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src={heroWellness}
+            src={heroImage}
             alt="ימי גיבוש לחברות"
             className="w-full h-full object-cover"
           />
