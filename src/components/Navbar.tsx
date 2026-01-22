@@ -9,6 +9,7 @@ const Navbar = () => {
 
   const navLinks = [
     { href: "/", label: "בית" },
+    { href: "/#retreats", label: "ריטריטים" },
     { href: "/private-events", label: "אירועים פרטיים" },
     { href: "/corporate-events", label: "אירועי חברה" },
     { href: "/about", label: "אודות" },
