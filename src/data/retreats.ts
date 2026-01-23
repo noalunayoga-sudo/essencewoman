@@ -238,6 +238,25 @@ export const retreats: Retreat[] = [
       "ביטול פחות מ-7 ימים לפני הריטריט – תשלום מלא",
       "ניתן להעביר את המקום למשתתף/ת אחר/ת בתיאום מראש"
     ]
+  },
+  {
+    id: "india-yoga-april-2026",
+    title: "חופשת יוגה בהודו",
+    subtitle: "מסע רוחני בארץ היוגה",
+    date: "אפריל 2026",
+    location: "הודו",
+    price: 0,
+    spots: 0,
+    spotsLeft: 0,
+    image: heroImage,
+    description: "חופשת יוגה בהודו - תאריכים מדויקים ופרטים מלאים בקרוב. הירשמו לרשימת ההמתנה כדי לקבל עדכון ראשונים!",
+    highlights: [
+      "תאריכים ופרטים מלאים בקרוב"
+    ],
+    whatsappLink: "https://wa.me/message/X3ASE2JKXDO7J1",
+    status: "upcoming",
+    forWomen: false,
+    facilitators: ["נועה לונה"]
   }
 ];
 
