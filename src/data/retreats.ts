@@ -1,5 +1,6 @@
 import heroImage from "@/assets/hero-retreat.jpg";
 import sinaiImage from "@/assets/sinai-retreat.jpg";
+import indiaImage from "@/assets/india-retreat.jpg";
 
 export interface PriceTier {
   name: string;
@@ -248,7 +249,7 @@ export const retreats: Retreat[] = [
     price: 0,
     spots: 0,
     spotsLeft: 0,
-    image: heroImage,
+    image: indiaImage,
     description: "חופשת יוגה בהודו - תאריכים מדויקים ופרטים מלאים בקרוב. הירשמו לרשימת ההמתנה כדי לקבל עדכון ראשונים!",
     highlights: [
       "תאריכים ופרטים מלאים בקרוב"
