@@ -9,6 +9,7 @@ interface RetreatCardProps {
 
 const RetreatCard = ({ retreat }: RetreatCardProps) => {
   const isSoldOut = retreat.status === "sold-out" || retreat.spotsLeft === 0;
+  const isComingSoon = retreat.price === 0 && retreat.spots === 0;
 
   // Get the current available price tier
   const getCurrentPrice = () => {
@@ -69,10 +70,12 @@ const RetreatCard = ({ retreat }: RetreatCardProps) => {
             <MapPin size={16} />
             <span className="font-body">{retreat.location}</span>
           </div>
-          <div className="flex items-center gap-1">
-            <Users size={16} />
-            <span className="font-body">{retreat.spots} משתתפים</span>
-          </div>
+          {!isComingSoon && (
+            <div className="flex items-center gap-1">
+              <Users size={16} />
+              <span className="font-body">{retreat.spots} משתתפים</span>
+            </div>
+          )}
         </div>
 
         {/* Spacer to push price and buttons to bottom */}
@@ -80,8 +83,14 @@ const RetreatCard = ({ retreat }: RetreatCardProps) => {
 
         {/* Price */}
         <div className="flex items-center gap-2 mb-6">
-          <span className="font-body text-sm text-muted-foreground">החל מ-</span>
-          <span className="font-display text-2xl text-primary">₪{getCurrentPrice()}</span>
+          {isComingSoon ? (
+            <span className="font-display text-2xl text-primary">פרטים בקרוב</span>
+          ) : (
+            <>
+              <span className="font-body text-sm text-muted-foreground">החל מ-</span>
+              <span className="font-display text-2xl text-primary">₪{getCurrentPrice()}</span>
+            </>
+          )}
         </div>
 
         {/* Actions */}
@@ -91,7 +100,7 @@ const RetreatCard = ({ retreat }: RetreatCardProps) => {
               פרטים נוספים
             </Link>
           </Button>
-          {!isSoldOut && (
+          {!isSoldOut && !isComingSoon && (
             <Button variant="whatsapp" asChild>
               <a
                 href={retreat.whatsappLink}
@@ -99,6 +108,17 @@ const RetreatCard = ({ retreat }: RetreatCardProps) => {
                 rel="noopener noreferrer"
               >
                 להרשמה
+              </a>
+            </Button>
+          )}
+          {isComingSoon && (
+            <Button variant="outline" asChild>
+              <a
+                href={retreat.whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                עדכנו אותי
               </a>
             </Button>
           )}
