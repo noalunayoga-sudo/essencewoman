@@ -592,10 +592,12 @@ const RetreatPage = () => {
               <MapPin size={20} />
               <span className="font-body">{retreat.location}</span>
             </div>
-            <div className="flex items-center gap-2">
-              <Users size={20} />
-              <span className="font-body">{retreat.spots} משתתפים</span>
-            </div>
+            {retreat.spots > 0 && (
+              <div className="flex items-center gap-2">
+                <Users size={20} />
+                <span className="font-body">{retreat.spots} משתתפים</span>
+              </div>
+            )}
           </div>
         </div>
       </section>
