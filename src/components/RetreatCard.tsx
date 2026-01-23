@@ -8,8 +8,8 @@ interface RetreatCardProps {
 }
 
 const RetreatCard = ({ retreat }: RetreatCardProps) => {
-  const isSoldOut = retreat.status === "sold-out" || retreat.spotsLeft === 0;
   const isComingSoon = retreat.price === 0 && retreat.spots === 0;
+  const isSoldOut = !isComingSoon && (retreat.status === "sold-out" || retreat.spotsLeft === 0);
 
   // Get the current available price tier
   const getCurrentPrice = () => {
