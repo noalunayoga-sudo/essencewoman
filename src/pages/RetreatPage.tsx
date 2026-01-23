@@ -623,28 +623,51 @@ const RetreatPage = () => {
               ))}
             </ul>
 
-            {/* Pricing */}
-            <div className="bg-primary/10 rounded-2xl p-6 text-center">
-              <p className="font-body text-muted-foreground mb-2">מחיר</p>
-              <div className="flex items-center justify-center gap-3 mb-4">
-                <span className="font-display text-4xl text-primary">₪{retreat.price}</span>
-                {retreat.originalPrice && (
-                  <span className="font-body text-xl text-muted-foreground line-through">₪{retreat.originalPrice}</span>
+            {/* Pricing - only show if not coming soon */}
+            {retreat.price > 0 && (
+              <div className="bg-primary/10 rounded-2xl p-6 text-center">
+                <p className="font-body text-muted-foreground mb-2">מחיר</p>
+                <div className="flex items-center justify-center gap-3 mb-4">
+                  <span className="font-display text-4xl text-primary">₪{retreat.price}</span>
+                  {retreat.originalPrice && (
+                    <span className="font-body text-xl text-muted-foreground line-through">₪{retreat.originalPrice}</span>
+                  )}
+                </div>
+                {retreat.spots > 0 && (
+                  <p className="font-body text-sm text-muted-foreground mb-6">
+                    {retreat.spotsLeft} מקומות פנויים מתוך {retreat.spots}
+                  </p>
                 )}
+                <Button variant="whatsapp" size="xl" asChild>
+                  <a
+                    href={retreat.whatsappLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    להרשמה
+                  </a>
+                </Button>
               </div>
-              <p className="font-body text-sm text-muted-foreground mb-6">
-                {retreat.spotsLeft} מקומות פנויים מתוך {retreat.spots}
-              </p>
-              <Button variant="whatsapp" size="xl" asChild>
-                <a
-                  href={retreat.whatsappLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  להרשמה
-                </a>
-              </Button>
-            </div>
+            )}
+            
+            {/* Coming soon CTA */}
+            {retreat.price === 0 && (
+              <div className="bg-primary/10 rounded-2xl p-6 text-center">
+                <p className="font-display text-2xl text-primary mb-4">פרטים מלאים בקרוב</p>
+                <p className="font-body text-muted-foreground mb-6">
+                  רוצים לשמוע ראשונים? השאירו פרטים ונעדכן אתכם
+                </p>
+                <Button variant="whatsapp" size="xl" asChild>
+                  <a
+                    href={retreat.whatsappLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    עדכנו אותי
+                  </a>
+                </Button>
+              </div>
+            )}
           </div>
         </div>
       </section>
