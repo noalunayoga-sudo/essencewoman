@@ -242,7 +242,7 @@ export const retreats: Retreat[] = [
   {
     id: "india-yoga-april-2026",
     title: "חופשת יוגה בהודו",
-    subtitle: "מסע רוחני בארץ היוגה",
+    subtitle: "לגלות את הקסם של הודו",
     date: "אפריל 2026",
     location: "הודו",
     price: 0,
