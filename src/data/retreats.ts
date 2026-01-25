@@ -1,4 +1,4 @@
-import heroImage from "@/assets/hero-retreat.jpg";
+import essenceImage from "@/assets/essence-retreat.jpg";
 import sinaiImage from "@/assets/sinai-retreat.jpg";
 import indiaImage from "@/assets/india-retreat.jpg";
 
@@ -48,7 +48,7 @@ export const retreats: Retreat[] = [
     originalPrice: 780,
     spots: 21,
     spotsLeft: 7,
-    image: heroImage,
+    image: essenceImage,
     description: "ריטריט יום שלם שמזמין אותך לעצור, לנשום, ולהתחבר לעצמך ולנשים נוספות. יום של יוגה, סדנאות, אוכל טוב ורגעים שישארו איתך.",
     highlights: [
       "סדנאות יוגה ותנועה",
