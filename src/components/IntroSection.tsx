@@ -1,4 +1,4 @@
-import mandalaImage from "@/assets/mandala.jpg";
+import retreatMomentImage from "@/assets/retreat-moment.jpg";
 
 const IntroSection = () => {
   return (
@@ -7,8 +7,8 @@ const IntroSection = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="order-2 md:order-1">
             <img
-              src={mandalaImage}
-              alt="נשים יוצרות מנדלה יחד"
+              src={retreatMomentImage}
+              alt="נועה וקורל יוצרות מנדלה יחד"
               className="rounded-2xl shadow-elevated w-full aspect-[4/3] object-cover"
             />
           </div>
