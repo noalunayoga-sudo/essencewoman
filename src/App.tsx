@@ -10,7 +10,6 @@ import About from "./pages/About";
 import Gallery from "./pages/Gallery";
 import PrivateEvents from "./pages/PrivateEvents";
 import CorporateEvents from "./pages/CorporateEvents";
-import EssenceFlyer from "./pages/EssenceFlyer";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -29,7 +28,6 @@ const App = () => (
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/private-events" element={<PrivateEvents />} />
           <Route path="/corporate-events" element={<CorporateEvents />} />
-          <Route path="/essence-flyer" element={<EssenceFlyer />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
