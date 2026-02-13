@@ -4,59 +4,88 @@ import { getRetreatById } from "@/data/retreats";
 import { Button } from "@/components/ui/button";
 import { Calendar, MapPin, Users, Check, Home, Utensils, Sparkles } from "lucide-react";
 
-// Import existing sections for the main retreat
-import IntroSection from "@/components/IntroSection";
-import FeaturesSection from "@/components/FeaturesSection";
-import ScheduleSection from "@/components/ScheduleSection";
-import AboutSection from "@/components/AboutSection";
-import ForWhoSection from "@/components/ForWhoSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
-import PricingSection from "@/components/PricingSection";
+// Sinai CTA Button component
+const SinaiCTA = ({ href, text = "להצטרפות" }: { href: string; text?: string }) => (
+  <a
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-block bg-gold hover:bg-gold-light text-foreground font-display text-xl px-10 py-4 rounded-full shadow-elevated transition-all duration-300 hover:scale-105"
+  >
+    {text}
+  </a>
+);
+
+// Decorative leaf divider
+const LeafDivider = () => (
+  <div className="flex items-center justify-center py-4">
+    <span className="text-teal text-3xl">🌿</span>
+  </div>
+);
 
 // Sinai retreat specific components
-const SinaiIntroSection = () => (
-  <section className="section-padding bg-secondary">
+const SinaiIntroSection = ({ whatsappLink }: { whatsappLink: string }) => (
+  <section className="bg-teal py-8 md:py-12">
     <div className="container max-w-4xl mx-auto text-center">
-      <h2 className="font-display text-4xl md:text-5xl text-foreground mb-6">
-        בואו תתפנקו
+      <h2 className="font-display text-3xl md:text-5xl text-white mb-4">
+        חופש, תנועה וחיבור בסיני הקסומה
       </h2>
-      
-      <p className="font-display text-2xl text-primary mb-4 italic">
-        4 ימים של כיף, חיבור אנושי ורגעים בלתי נשכחים
-      </p>
-      
-      <p className="font-body text-xl text-muted-foreground mb-8 leading-relaxed max-w-2xl mx-auto">
-        יוגה מול הים, שנורקלינג, טיולים, ערבים קסומים, אנשים מדהימים, 
-        ובעיקר - הרבה כיף ושקט מהשגרה. חופשה שמחזירה אתכם הביתה רעננים ומלאי אנרגיה.
-      </p>
-
-      <blockquote className="font-body text-foreground/80 text-lg border-r-4 border-primary pr-4 italic text-right max-w-2xl mx-auto">
-        "כדי שתוכלו באמת להתמסר, להרפות ולהנות - דאגתי לכל המעטפת"
-      </blockquote>
     </div>
   </section>
 );
 
-const SinaiScheduleSection = ({ schedule }: { schedule: { day: string; activities: string[] }[] }) => (
+const SinaiDescriptionSection = ({ whatsappLink }: { whatsappLink: string }) => (
+  <section className="section-padding bg-cream">
+    <div className="container max-w-3xl mx-auto text-center">
+      <p className="font-body text-lg md:text-xl text-foreground/80 leading-relaxed mb-6">
+        מי שכבר היה בסיני יודע.
+      </p>
+      <p className="font-body text-lg md:text-xl text-foreground/80 leading-relaxed mb-6">
+        מי שעוד לא היה בסיני, אנחנו מקוות בשבילכם שאתם עתידים לגלות,
+        שבסיני יש קסם שאין בשום מקום אחר בעולם.
+      </p>
+      <p className="font-body text-lg md:text-xl text-foreground/80 leading-relaxed mb-10">
+        אנחנו מזמינות אתכם.ן לחופשה של חופש, תנועה והרבה כיף.
+        <br />
+        בואו לפגוש אנשים חדשים, לייצר חיבורים, לגלות דברים חדשים וליהנות מאיזון מושלם בין סדנאות ותוכן לבין זמן חופשי, שקט, מוזיקה וריקודים.
+      </p>
+
+      <LeafDivider />
+
+      <ul className="text-right space-y-4 font-body text-foreground/80 text-lg max-w-xl mx-auto mb-10">
+        <li className="flex items-start gap-3"><span className="text-teal-dark mt-1">•</span>קאמפ מפנק שמתאים גם למזג אוויר קריר.</li>
+        <li className="flex items-start gap-3"><span className="text-teal-dark mt-1">•</span>שיעורי יוגה, תנועה וחיבור לגוף.</li>
+        <li className="flex items-start gap-3"><span className="text-teal-dark mt-1">•</span>סדנאות מדיטציה, מיינדפולנס, כתיבה ועוד..</li>
+        <li className="flex items-start gap-3"><span className="text-teal-dark mt-1">•</span>הקסם של סיני - נופים קסומים של מדבר וים.</li>
+        <li className="flex items-start gap-3"><span className="text-teal-dark mt-1">•</span>לינה מפנקת ואוכל מזין.</li>
+        <li className="flex items-start gap-3"><span className="text-teal-dark mt-1">•</span>קבוצה של אנשים טובים וזמן לחיבורים.</li>
+        <li className="flex items-start gap-3"><span className="text-teal-dark mt-1">•</span>כל מה שאתם צריכים כדי להרפות ולהתמסר לחוויה.</li>
+      </ul>
+
+      <SinaiCTA href={whatsappLink} text="אני בפנים" />
+    </div>
+  </section>
+);
+
+const SinaiScheduleSection = ({ schedule, whatsappLink }: { schedule: { day: string; activities: string[] }[]; whatsappLink: string }) => (
   <section className="section-padding">
     <div className="container max-w-4xl mx-auto">
-      <div className="text-center mb-12">
-        <h2 className="font-display text-4xl md:text-5xl text-foreground mb-4">
-          לו״ז משוער
+      <div className="text-center mb-4">
+        <h2 className="font-display text-4xl md:text-5xl text-foreground mb-2">
+          איך נראים הימים שלנו?
         </h2>
-        <p className="font-body text-xl text-muted-foreground">
-          4 ימים של תנועה, שקט וחיבור
-        </p>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-6">
+      <LeafDivider />
+
+      <div className="grid md:grid-cols-2 gap-6 mt-8">
         {schedule.map((day, index) => (
-          <div key={index} className="gradient-card rounded-2xl p-6 shadow-elevated">
-            <h3 className="font-display text-xl text-primary mb-4">{day.day}</h3>
+          <div key={index} className="bg-cream rounded-2xl p-6 shadow-soft">
+            <h3 className="font-display text-xl text-teal-dark mb-4 border-b border-teal/30 pb-3">{day.day}</h3>
             <ul className="space-y-2">
               {day.activities.map((activity, actIndex) => (
                 <li key={actIndex} className="flex items-start gap-2 font-body text-foreground/80">
-                  <span className="text-primary mt-1">•</span>
+                  <span className="text-teal-dark mt-1">•</span>
                   {activity}
                 </li>
               ))}
@@ -64,93 +93,176 @@ const SinaiScheduleSection = ({ schedule }: { schedule: { day: string; activitie
           </div>
         ))}
       </div>
+
+      <div className="text-center mt-10">
+        <SinaiCTA href={whatsappLink} text="אני בפנים" />
+      </div>
     </div>
   </section>
 );
 
-const SinaiIncludesSection = ({ includes }: { includes: string[] }) => (
-  <section className="section-padding bg-secondary">
-    <div className="container max-w-6xl mx-auto">
-      <div className="text-center mb-12">
-        <h2 className="font-display text-4xl md:text-5xl text-foreground mb-4">
-          מה כולל?
+const SinaiIncludesSection = ({ includes, whatsappLink }: { includes: string[]; whatsappLink: string }) => (
+  <section className="section-padding bg-cream">
+    <div className="container max-w-4xl mx-auto">
+      <div className="text-center mb-4">
+        <h2 className="font-display text-4xl md:text-5xl text-foreground mb-2">
+          מה כלול בחופשה?
         </h2>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-8">
-        {/* הלינה */}
-        <div className="gradient-card rounded-2xl p-6 shadow-elevated text-center">
-          <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
-            <Home className="text-primary" size={32} />
+      <LeafDivider />
+
+      <p className="font-body text-lg text-foreground/70 text-center mb-10 italic">
+        כדי שתוכלו באמת להתמסר, להרפות ולהנות, דאגנו לכל המעטפת:
+      </p>
+
+      <div className="grid md:grid-cols-2 gap-8 mb-8">
+        {/* התהליך */}
+        <div className="bg-background rounded-2xl p-6 shadow-soft">
+          <div className="flex items-center gap-3 mb-4">
+            <Sparkles className="text-teal-dark" size={28} />
+            <h3 className="font-display text-2xl text-foreground">התהליך</h3>
           </div>
-          <h3 className="font-display text-2xl text-foreground mb-4">הלינה</h3>
-          <p className="font-body text-foreground/80">
-            3 לילות בבקתות עץ יפיפיות על החוף, ממוזגות ועם מקלחת ושירותים בכל בקתה
-          </p>
+          <ul className="space-y-2 font-body text-foreground/80">
+            <li>• טקס פתיחה וסיום</li>
+            <li>• שיעורי יוגה</li>
+            <li>• סדנאות מגוונות</li>
+            <li>• זמן אישי להטמעה, מנוחה ושהייה בטבע</li>
+          </ul>
+        </div>
+
+        {/* הלינה */}
+        <div className="bg-background rounded-2xl p-6 shadow-soft">
+          <div className="flex items-center gap-3 mb-4">
+            <Home className="text-teal-dark" size={28} />
+            <h3 className="font-display text-2xl text-foreground">הלינה</h3>
+          </div>
+          <ul className="space-y-2 font-body text-foreground/80">
+            <li>• 3 לילות בקאמפ מפנק</li>
+            <li>• בקתות עץ ממוזגות עם מקלחת ושירותים</li>
+            <li>• חלל תרגול סגור וסלון עם אח</li>
+          </ul>
         </div>
 
         {/* האוכל */}
-        <div className="gradient-card rounded-2xl p-6 shadow-elevated text-center">
-          <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
-            <Utensils className="text-primary" size={32} />
+        <div className="bg-background rounded-2xl p-6 shadow-soft">
+          <div className="flex items-center gap-3 mb-4">
+            <Utensils className="text-teal-dark" size={28} />
+            <h3 className="font-display text-2xl text-foreground">האוכל</h3>
           </div>
-          <h3 className="font-display text-2xl text-foreground mb-4">האוכל</h3>
-          <p className="font-body text-foreground/80">
-            פריסת בוקר מתוקה עם פירות, עוגות, קפה ותה. בראנץ׳ מפנק ומזין. ארוחת ערב עשירה.
-          </p>
+          <ul className="space-y-2 font-body text-foreground/80">
+            <li>• 2 ארוחות מלאות ביום</li>
+            <li>• שתייה חמה, פירות ונשנושים כל היום</li>
+            <li>• אוכל פשוט, מזין ומלא צבע</li>
+          </ul>
         </div>
 
-        {/* התהליך */}
-        <div className="gradient-card rounded-2xl p-6 shadow-elevated text-center">
-          <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
-            <Sparkles className="text-primary" size={32} />
+        {/* מה עוד */}
+        <div className="bg-background rounded-2xl p-6 shadow-soft">
+          <div className="flex items-center gap-3 mb-4">
+            <Check className="text-teal-dark" size={28} />
+            <h3 className="font-display text-2xl text-foreground">מה עוד</h3>
           </div>
-          <h3 className="font-display text-2xl text-foreground mb-4">התהליך</h3>
-          <p className="font-body text-foreground/80">
-            שיעורי יוגה, סדנאות, דיפ שוואסאנה, שנורקלינג, מדורה, ומתנה אישית לכל משתתף/ת
-          </p>
+          <ul className="space-y-2 font-body text-foreground/80">
+            <li>• הסעות מהגבול ובחזרה</li>
+            <li>• מתנה אישית לכל משתתף/ת</li>
+            <li>• חוויה בלתי נשכחת</li>
+          </ul>
         </div>
       </div>
 
-      <div className="mt-12 gradient-card rounded-2xl p-6 shadow-elevated">
-        <h3 className="font-display text-2xl text-foreground mb-4 text-center">עוד כלול בחבילה:</h3>
-        <div className="grid md:grid-cols-2 gap-4">
-          {includes.map((item, index) => (
-            <div key={index} className="flex items-center gap-3 font-body text-foreground/80">
-              <Check className="text-primary flex-shrink-0" size={20} />
-              {item}
-            </div>
-          ))}
-        </div>
+      <div className="text-center mt-10">
+        <SinaiCTA href={whatsappLink} text="אני רוצה להצטרף" />
       </div>
     </div>
   </section>
 );
 
-const SinaiLocationSection = () => (
+const SinaiForWhoSection = ({ whatsappLink }: { whatsappLink: string }) => (
   <section className="section-padding">
-    <div className="container max-w-4xl mx-auto">
-      <div className="gradient-card rounded-3xl p-8 md:p-12 shadow-elevated">
-        <div className="text-center mb-8">
-          <h2 className="font-display text-3xl md:text-4xl text-foreground mb-4">
-            מלדיב ביץ׳ - חוף אל מאחש
-          </h2>
-          <p className="font-body text-xl text-muted-foreground">
-            הבית שלנו ל-4 ימים
-          </p>
-        </div>
+    <div className="container max-w-3xl mx-auto">
+      <div className="text-center mb-4">
+        <h2 className="font-display text-4xl md:text-5xl text-foreground mb-2">
+          למי זה מתאים?
+        </h2>
+      </div>
 
-        <div className="space-y-4 font-body text-foreground/80 text-lg leading-relaxed">
-          <p>
-            קאמפ מלדיב ביץ׳ ממוקם על חוף אל מאחש הקסום בסיני, עם נוף ישיר לים ולהרים.
-          </p>
-          <p>
-            בקתות עץ יפיפיות על החוף - ממוזגות, עם מקלחת ושירותים פרטיים בכל בקתה.
-          </p>
-          <p>
-            מרחב תרגול מושלם מול הים, אוכל מעולה, ואווירה שמזמינה להרפות ולהתחבר.
+      <LeafDivider />
+
+      <div className="bg-cream rounded-2xl p-8 shadow-soft mb-8">
+        <p className="font-body text-lg text-foreground/80 leading-relaxed mb-6">
+          הריטריט הזה מתאים לכל מי שרוצה לצאת לחופשה באווירה טובה — יוגה, ים, שקט, אנשים שכיף להיות לידם.
+        </p>
+        <ul className="space-y-3 font-body text-foreground/80 text-lg">
+          <li className="flex items-start gap-3">
+            <span className="text-teal-dark mt-1">•</span>
+            לכל מי שבא להם חופש רגוע, פשוט וכיפי.
+          </li>
+          <li className="flex items-start gap-3">
+            <span className="text-teal-dark mt-1">•</span>
+            מי שרוצה לשלב יוגה, תנועה וסדנאות מגוונות באווירה קלילה.
+          </li>
+          <li className="flex items-start gap-3">
+            <span className="text-teal-dark mt-1">•</span>
+            התכנים מתאימים גם למי שאין לו ניסיון ביוגה.
+          </li>
+          <li className="flex items-start gap-3">
+            <span className="text-teal-dark mt-1">•</span>
+            מי שמרגיש שהגיע הזמן להתנתק מהיומיום ולהיטען באנרגיות חדשות.
+          </li>
+          <li className="flex items-start gap-3">
+            <span className="text-teal-dark mt-1">•</span>
+            מי שאוהב להכיר אנשים, לצחוק, וליהנות.
+          </li>
+        </ul>
+
+        <p className="font-body text-lg text-foreground/70 mt-6 italic text-center">
+          אם נשמע לך שזה בדיוק החופשה שאת.ה צריכ.ה — זה הזמן להצטרף אלינו.
+        </p>
+      </div>
+
+      <div className="text-center">
+        <SinaiCTA href={whatsappLink} text="אני בפנים" />
+      </div>
+    </div>
+  </section>
+);
+
+import noaProfile from "@/assets/noa-profile.jpg";
+
+const SinaiAboutSection = () => (
+  <section className="section-padding bg-cream">
+    <div className="container max-w-4xl mx-auto">
+      <div className="text-center mb-4">
+        <h2 className="font-display text-4xl md:text-5xl text-foreground mb-2">
+          מי אנחנו?
+        </h2>
+      </div>
+
+      <LeafDivider />
+
+      <div className="flex flex-col md:flex-row items-center gap-8 mb-8">
+        <img 
+          src={noaProfile} 
+          alt="נועה מתתיהו" 
+          className="w-40 h-40 rounded-full object-cover shadow-lg flex-shrink-0"
+        />
+        <div className="text-center md:text-right">
+          <h3 className="font-display text-2xl text-teal-dark mb-3">נועה מתתיהו</h3>
+          <p className="font-body text-foreground/80 leading-relaxed">
+            מורה ותלמידה של היוגה כבר יותר מעשור. יוצרת תוכן ומנחת סדנאות גוף נפש.
+            מלווה תהליכים ברוח ההתמקדות בשילוב דימיון מודרך, סאונד הילינג וכלים נוספים מעולמות הרוח והמיינדפולנס.
+            אוהבת אנשים, לרקוד, לצחוק ולגלות דברים חדשים.
           </p>
         </div>
+      </div>
+
+      <p className="font-body text-lg text-foreground/70 text-center italic leading-relaxed max-w-2xl mx-auto mb-8">
+        אנחנו מזמינות אתכם להצטרף אלינו לחופשה של צחוק, אנשים טובים, מוזיקה טובה וריקודים לצד תנועה, תוכן איכותי וסדנאות מגוונות.
+      </p>
+
+      <div className="text-center">
+        <SinaiCTA href="https://wa.me/message/X3ASE2JKXDO7J1" text="ספרו לי עוד" />
       </div>
     </div>
   </section>
@@ -161,22 +273,20 @@ const SinaiPricingSection = ({ priceTiers, whatsappLink, cancellationPolicy }: {
   whatsappLink: string;
   cancellationPolicy?: string[];
 }) => {
-  // Find the first available tier (current price)
   const currentTierIndex = priceTiers.findIndex(tier => tier.status !== "sold-out");
   
   return (
-    <section className="section-padding bg-secondary">
+    <section className="section-padding">
       <div className="container max-w-4xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="font-display text-4xl md:text-5xl text-foreground mb-4">
-            מחירים והרשמה
+        <div className="text-center mb-4">
+          <h2 className="font-display text-4xl md:text-5xl text-foreground mb-2">
+            ההשקעה שלך
           </h2>
-          <p className="font-body text-xl text-muted-foreground">
-            הבטיחו את מקומכם
-          </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
+        <LeafDivider />
+
+        <div className="grid md:grid-cols-3 gap-6 mb-10">
           {priceTiers.map((tier, index) => {
             const isCurrent = index === currentTierIndex;
             const isSoldOut = tier.status === "sold-out";
@@ -184,17 +294,17 @@ const SinaiPricingSection = ({ priceTiers, whatsappLink, cancellationPolicy }: {
             return (
               <div 
                 key={index} 
-                className={`gradient-card rounded-2xl p-6 shadow-elevated text-center relative ${
+                className={`bg-cream rounded-2xl p-6 shadow-soft text-center relative transition-all duration-300 ${
                   isSoldOut ? "opacity-60" : ""
-                } ${isCurrent ? "ring-2 ring-primary scale-105" : ""}`}
+                } ${isCurrent ? "ring-2 ring-gold scale-105 shadow-elevated" : ""}`}
               >
                 {isCurrent && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-sm px-4 py-1 rounded-full font-medium">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gold text-foreground text-sm px-4 py-1 rounded-full font-medium font-body">
                     המחיר הנוכחי
                   </div>
                 )}
                 <h3 className="font-display text-lg text-foreground mb-2 mt-2">{tier.name}</h3>
-                <p className={`font-display text-4xl ${isCurrent ? "text-primary" : "text-foreground"}`}>₪{tier.price}</p>
+                <p className={`font-display text-4xl ${isCurrent ? "text-teal-dark" : "text-foreground"}`}>₪{tier.price}</p>
                 {isSoldOut && (
                   <p className="font-body text-sm text-muted-foreground mt-2">אזל</p>
                 )}
@@ -203,173 +313,80 @@ const SinaiPricingSection = ({ priceTiers, whatsappLink, cancellationPolicy }: {
           })}
         </div>
 
-        <div className="text-center mb-12">
-          <Button variant="whatsapp" size="xl" asChild>
-            <a
-              href={whatsappLink}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              לשריון מקום
-            </a>
-          </Button>
+        <div className="bg-cream rounded-2xl p-6 shadow-soft mb-8">
+          <h3 className="font-display text-xl text-foreground mb-4 text-center">המחיר כולל:</h3>
+          <ul className="space-y-2 font-body text-foreground/80 max-w-lg mx-auto">
+            <li>• 3 לילות ו-4 ימים בקאמפ מלדיב ביץ׳</li>
+            <li>• הסעה מהגבול וחזרה</li>
+            <li>• כל המפגשים, התרגולים והפעילויות</li>
+            <li>• ליווי אישי במרחב קטן ואינטימי</li>
+            <li>• 2 ארוחות + נשנושים לאורך היום</li>
+          </ul>
+          <p className="font-body text-sm text-muted-foreground text-center mt-4">
+            (מעבר גבול וביטוח נסיעות אינם כלולים במחיר)
+          </p>
         </div>
 
         {cancellationPolicy && cancellationPolicy.length > 0 && (
-          <div className="gradient-card rounded-2xl p-6 shadow-elevated">
-            <h3 className="font-display text-xl text-foreground mb-4 text-center">מדיניות ביטול</h3>
-            <ul className="space-y-2">
+          <div className="bg-cream rounded-2xl p-6 shadow-soft mb-8">
+            <h3 className="font-display text-lg text-foreground mb-3 text-center">מדיניות ביטול</h3>
+            <ul className="space-y-2 max-w-lg mx-auto">
               {cancellationPolicy.map((policy, index) => (
                 <li key={index} className="flex items-start gap-2 font-body text-foreground/80 text-sm">
-                  <span className="text-primary mt-1">•</span>
+                  <span className="text-teal-dark mt-1">•</span>
                   {policy}
                 </li>
               ))}
             </ul>
           </div>
         )}
+
+        <div className="text-center">
+          <SinaiCTA href={whatsappLink} text="תרשמו אותי" />
+        </div>
       </div>
     </section>
   );
 };
 
-import noaProfile from "@/assets/noa-profile.jpg";
-
-const SinaiAboutSection = () => (
-  <section className="section-padding">
-    <div className="container max-w-4xl mx-auto">
-      <h2 className="font-display text-4xl md:text-5xl text-foreground mb-8 text-center">
-        מי מנחה?
-      </h2>
-      
-      <div className="gradient-card rounded-3xl p-8 shadow-elevated">
-        <div className="flex flex-col md:flex-row items-center gap-8">
-          <img 
-            src={noaProfile} 
-            alt="נועה מתתיהו" 
-            className="w-48 h-48 rounded-full object-cover shadow-lg"
-          />
-          <div className="text-center md:text-right">
-            <h3 className="font-display text-3xl text-primary mb-2">נועה מתתיהו</h3>
-            <p className="font-body text-sm text-muted-foreground mb-4 italic">
-              Wellness & Lifestyle
-            </p>
-            <p className="font-body text-foreground/80 leading-relaxed">
-              מחברת אנשים לעצמם ולאחרים מתוך מקום של רכות, שמחה וקבלה.
-              <br /><br />
-              מורה ותלמידה של היוגה כבר יותר מעשור. מנחה סדנאות, מלווה תהליכים, 
-              ויוצרת מרחבים שמזמינים חיבור אמיתי לגוף ולנפש.
-              <br /><br />
-              בריטריט יצטרפו אלינו גם מנחים אורחים מיוחדים שיוסיפו עומק וגיוון לחוויה.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-);
-
-const SinaiForWhoSection = () => (
-  <section className="section-padding bg-secondary">
-    <div className="container max-w-4xl mx-auto">
-      <div className="text-center mb-12">
-        <h2 className="font-display text-4xl md:text-5xl text-foreground mb-4">
-          למי זה מתאים?
-        </h2>
-        <p className="font-body text-xl text-muted-foreground">
-          הריטריט פתוח לכולם - נשים וגברים כאחד
-        </p>
-      </div>
-
-      <div className="grid md:grid-cols-2 gap-6">
-        <div className="gradient-card rounded-2xl p-6 shadow-elevated">
-          <h3 className="font-display text-xl text-primary mb-4">מתאים לך אם...</h3>
-          <ul className="space-y-3 font-body text-foreground/80">
-            <li className="flex items-start gap-2">
-              <Check className="text-primary flex-shrink-0 mt-1" size={18} />
-              את/ה מחפש/ת חופשה שונה מהרגיל
-            </li>
-            <li className="flex items-start gap-2">
-              <Check className="text-primary flex-shrink-0 mt-1" size={18} />
-              רוצה להתנתק באמת מהשגרה
-            </li>
-            <li className="flex items-start gap-2">
-              <Check className="text-primary flex-shrink-0 mt-1" size={18} />
-              אוהב/ת יוגה או סקרן/ית להתנסות
-            </li>
-            <li className="flex items-start gap-2">
-              <Check className="text-primary flex-shrink-0 mt-1" size={18} />
-              מחפש/ת חיבור אנושי אמיתי
-            </li>
-            <li className="flex items-start gap-2">
-              <Check className="text-primary flex-shrink-0 mt-1" size={18} />
-              רוצה לחזור הביתה רענן/ה ומלא/ת אנרגיה
-            </li>
-          </ul>
-        </div>
-
-        <div className="gradient-card rounded-2xl p-6 shadow-elevated">
-          <h3 className="font-display text-xl text-primary mb-4">לא צריך...</h3>
-          <ul className="space-y-3 font-body text-foreground/80">
-            <li className="flex items-start gap-2">
-              <span className="text-primary">✓</span>
-              ניסיון קודם ביוגה
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-primary">✓</span>
-              להיות גמיש/ה או ספורטיבי/ת
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-primary">✓</span>
-              להגיע עם מישהו - אנשים מגיעים לבד ויוצאים עם חברים
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-primary">✓</span>
-              לדעת לשנרקל - נלמד במקום!
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-);
-
 const SinaiTestimonialsSection = () => (
-  <section className="section-padding">
+  <section className="section-padding bg-cream">
     <div className="container max-w-4xl mx-auto">
-      <div className="text-center mb-12">
-        <h2 className="font-display text-4xl md:text-5xl text-foreground mb-4">
+      <div className="text-center mb-4">
+        <h2 className="font-display text-4xl md:text-5xl text-foreground mb-2">
           מה אומרים עלינו
         </h2>
       </div>
 
+      <LeafDivider />
+
       <div className="grid md:grid-cols-2 gap-6">
-        <div className="gradient-card rounded-2xl p-6 shadow-elevated">
+        <div className="bg-background rounded-2xl p-6 shadow-soft">
           <p className="font-body text-foreground/80 italic mb-4 leading-relaxed">
             "חזרתי מהטיול עם המון אנרגיה וחברים חדשים. נועה יוצרת אווירה כזו נעימה ומקבלת, שאפשר פשוט להיות את עצמך."
           </p>
-          <p className="font-display text-primary">- שירה</p>
+          <p className="font-display text-teal-dark">- שירה</p>
         </div>
 
-        <div className="gradient-card rounded-2xl p-6 shadow-elevated">
+        <div className="bg-background rounded-2xl p-6 shadow-soft">
           <p className="font-body text-foreground/80 italic mb-4 leading-relaxed">
             "הייתי בהרבה טיולים מאורגנים, אבל זה היה משהו אחר לגמרי. השילוב של יוגה, טבע ואנשים מדהימים - פשוט מושלם."
           </p>
-          <p className="font-display text-primary">- דני</p>
+          <p className="font-display text-teal-dark">- דני</p>
         </div>
 
-        <div className="gradient-card rounded-2xl p-6 shadow-elevated">
+        <div className="bg-background rounded-2xl p-6 shadow-soft">
           <p className="font-body text-foreground/80 italic mb-4 leading-relaxed">
             "באתי לבד וקצת חששתי, אבל תוך כמה שעות הרגשתי כאילו אני מכירה את כולם שנים. חוויה שאני ממליצה לכל אחד ואחת."
           </p>
-          <p className="font-display text-primary">- מיכל</p>
+          <p className="font-display text-teal-dark">- מיכל</p>
         </div>
 
-        <div className="gradient-card rounded-2xl p-6 shadow-elevated">
+        <div className="bg-background rounded-2xl p-6 shadow-soft">
           <p className="font-body text-foreground/80 italic mb-4 leading-relaxed">
             "סיני הוא מקום מיוחד, אבל עם הקבוצה הזו והאנרגיה הזו - זה הפך לחוויה בלתי נשכחת. כבר נרשמתי לפעם הבאה!"
           </p>
-          <p className="font-display text-primary">- יובל</p>
+          <p className="font-display text-teal-dark">- יובל</p>
         </div>
       </div>
     </div>
@@ -384,145 +401,54 @@ const RetreatPage = () => {
     return <Navigate to="/" replace />;
   }
 
-  // For the main ESSENCE retreat, show the full detailed page
-  if (retreat.id === "essence-february-2026") {
-    return (
-      <Layout>
-        {/* Hero */}
-        <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
-          <div className="absolute inset-0">
-            <img
-              src={retreat.image}
-              alt={retreat.title}
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-background/95" />
-          </div>
-
-          <div className="relative z-10 text-center px-4 max-w-4xl mx-auto animate-fade-in">
-            <h1 className="font-display text-6xl md:text-8xl font-semibold tracking-wide text-white mb-6 drop-shadow-lg">
-              {retreat.title}
-            </h1>
-            
-            <p className="font-body text-xl md:text-2xl text-white/95 mb-4 font-light drop-shadow-md">
-              {retreat.subtitle}
-            </p>
-
-            <div className="flex flex-col items-center gap-4 mb-8">
-              <p className="font-display text-2xl md:text-3xl text-white font-medium drop-shadow-md">
-                יום שבת {retreat.date}
-              </p>
-              <p className="font-body text-lg text-white/80 drop-shadow-sm">
-                {retreat.location}
-              </p>
-            </div>
-
-            <Button variant="whatsapp" size="xl" asChild>
-              <a
-                href={retreat.whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                להצטרפות
-              </a>
-            </Button>
-
-            <p className="mt-8 text-white/90 font-body text-sm flex items-center justify-center gap-2 drop-shadow-sm">
-              🌸 מספר המקומות מוגבל ל-{retreat.spots} נשים בלבד
-            </p>
-          </div>
-        </section>
-
-        <IntroSection />
-        <FeaturesSection />
-        <ScheduleSection />
-        <AboutSection />
-        <ForWhoSection />
-        <TestimonialsSection />
-        <PricingSection />
-
-        {/* Final CTA */}
-        <section className="section-padding bg-primary/10">
-          <div className="container max-w-4xl mx-auto text-center">
-            <h2 className="font-display text-4xl md:text-5xl text-foreground mb-6">
-              מוכנה להצטרף?
-            </h2>
-            <p className="font-body text-xl text-muted-foreground mb-8">
-              יש לך שאלות? רוצה לשמור מקום? דברי איתנו
-            </p>
-            <Button variant="whatsapp" size="xl" asChild>
-              <a
-                href={retreat.whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                להצטרפות
-              </a>
-            </Button>
-          </div>
-        </section>
-      </Layout>
-    );
-  }
-
   // For Sinai retreats, show dedicated page
   if (retreat.id === "sinai-yoga-march-2026" || retreat.id === "sinai-yoga-may-2026") {
     return (
       <Layout>
-        {/* Hero */}
-        <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+        {/* Hero - Full screen */}
+        <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0">
             <img
               src={retreat.image}
               alt={retreat.title}
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-background/95" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/50" />
           </div>
 
           <div className="relative z-10 text-center px-4 max-w-4xl mx-auto animate-fade-in">
-            <h1 className="font-display text-5xl md:text-7xl font-semibold tracking-wide text-white mb-6 drop-shadow-lg">
-              {retreat.title}
+            <h1 className="font-display text-6xl md:text-8xl font-bold tracking-wide text-white mb-4 drop-shadow-lg">
+              חופשת יוגה
             </h1>
             
-            <p className="font-body text-xl md:text-2xl text-white/95 mb-4 font-light drop-shadow-md">
+            <p className="font-body text-xl md:text-2xl text-white/90 mb-8 font-light drop-shadow-md">
               {retreat.subtitle}
             </p>
 
-            <div className="flex flex-col items-center gap-4 mb-8">
-              <p className="font-display text-2xl md:text-3xl text-white font-medium drop-shadow-md">
+            <div className="mb-10">
+              <SinaiCTA href={retreat.whatsappLink} text="להצטרפות" />
+            </div>
+
+            <div className="flex flex-col items-center gap-2">
+              <p className="font-display text-xl md:text-2xl text-white font-medium drop-shadow-md">
                 {retreat.dateRange}
               </p>
               <p className="font-body text-lg text-white/80 drop-shadow-sm">
                 {retreat.location}
               </p>
             </div>
-
-            <Button variant="whatsapp" size="xl" asChild>
-              <a
-                href={retreat.whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                לשריון מקום
-              </a>
-            </Button>
-
-            <p className="mt-8 text-white/90 font-body text-sm flex items-center justify-center gap-2 drop-shadow-sm">
-              🌴 {retreat.spots} מקומות בלבד | לנשים וגברים
-            </p>
           </div>
         </section>
 
-        <SinaiIntroSection />
+        <SinaiIntroSection whatsappLink={retreat.whatsappLink} />
         
-        {retreat.schedule && <SinaiScheduleSection schedule={retreat.schedule} />}
+        <SinaiDescriptionSection whatsappLink={retreat.whatsappLink} />
         
-        {retreat.includes && <SinaiIncludesSection includes={retreat.includes} />}
+        {retreat.schedule && <SinaiScheduleSection schedule={retreat.schedule} whatsappLink={retreat.whatsappLink} />}
         
-        <SinaiLocationSection />
+        {retreat.includes && <SinaiIncludesSection includes={retreat.includes} whatsappLink={retreat.whatsappLink} />}
         
-        <SinaiForWhoSection />
+        <SinaiForWhoSection whatsappLink={retreat.whatsappLink} />
         
         <SinaiAboutSection />
 
@@ -537,23 +463,20 @@ const RetreatPage = () => {
         )}
 
         {/* Final CTA */}
-        <section className="section-padding bg-primary/10">
-          <div className="container max-w-4xl mx-auto text-center">
-            <h2 className="font-display text-4xl md:text-5xl text-foreground mb-6">
-              מוכנים לצאת למסע?
-            </h2>
-            <p className="font-body text-xl text-muted-foreground mb-8">
-              יש לכם שאלות? רוצים לשמור מקום? דברו איתי
+        <section className="section-padding bg-teal">
+          <div className="container max-w-3xl mx-auto text-center">
+            <p className="font-body text-lg md:text-xl text-white leading-relaxed mb-6">
+              אנחנו מזמינות אתכם להצטרף אלינו.
+              <br />
+              בואו לתת לעצמכם רגע חופש אמיתי, להניח את השגרה בצד ולהיטען מחדש.
             </p>
-            <Button variant="whatsapp" size="xl" asChild>
-              <a
-                href={retreat.whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                שלחו לי הודעה
-              </a>
-            </Button>
+            <p className="font-body text-lg text-white/90 mb-8 leading-relaxed">
+              להכיר אנשים טובים, לייצר חיבורים חדשים, וליהנות מאיזון מושלם בין תנועה ותוכן, לבין ים, שקט, מוזיקה, ריקודים וזמן לעצמכם.
+            </p>
+            <p className="font-body text-white/80 italic mb-8">
+              אם זה מדבר אליך, זה יותר פשוט ממה שאת.ה חושב.ת — פשוט בוא.י 💙
+            </p>
+            <SinaiCTA href={retreat.whatsappLink} text="אני איתכם" />
           </div>
         </section>
       </Layout>
