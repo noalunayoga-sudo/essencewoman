@@ -1,4 +1,3 @@
-import essenceImage from "@/assets/essence-retreat.jpg";
 import sinaiImage from "@/assets/sinai-retreat.jpg";
 import indiaImage from "@/assets/india-retreat.jpg";
 
@@ -38,34 +37,6 @@ export interface Retreat {
 }
 
 export const retreats: Retreat[] = [
-  {
-    id: "essence-february-2026",
-    title: "ESSENCE",
-    subtitle: "יום שלם של נשיות, תנועה, אוכל טוב וחיבור אמיתי",
-    date: "07/02/2026",
-    location: "תל-אביב",
-    price: 720,
-    originalPrice: 780,
-    spots: 21,
-    spotsLeft: 7,
-    image: essenceImage,
-    description: "ריטריט יום שלם שמזמין אותך לעצור, לנשום, ולהתחבר לעצמך ולנשים נוספות. יום של יוגה, סדנאות, אוכל טוב ורגעים שישארו איתך.",
-    highlights: [
-      "סדנאות יוגה ותנועה",
-      "מפגש עם הגוף והנפש",
-      "ארוחות בריאות וטעימות",
-      "מתנה מיוחדת לכל משתתפת"
-    ],
-    whatsappLink: "https://wa.me/message/X3ASE2JKXDO7J1",
-    status: "upcoming",
-    forWomen: true,
-    facilitators: ["נועה", "קורל"],
-    priceTiers: [
-      { name: "7 הראשונות", price: 660, spots: 7, spotsLeft: 0, status: "sold-out" },
-      { name: "7 הבאות", price: 720, spots: 7, spotsLeft: 7, status: "available" },
-      { name: "7 האחרונות", price: 780, spots: 7, spotsLeft: 7, status: "available" }
-    ]
-  },
   {
     id: "sinai-yoga-march-2026",
     title: "חופשת יוגה בסיני הקסומה (מרץ)",
