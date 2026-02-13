@@ -58,6 +58,14 @@ export default {
         "warm-brown": "hsl(var(--warm-brown))",
         "dusty-rose": "hsl(var(--dusty-rose))",
         olive: "hsl(var(--olive))",
+        teal: {
+          DEFAULT: "hsl(var(--teal))",
+          dark: "hsl(var(--teal-dark))",
+        },
+        gold: {
+          DEFAULT: "hsl(var(--gold))",
+          light: "hsl(var(--gold-light))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
