@@ -43,6 +43,10 @@
     --warm-brown: 25 25% 35%;
     --dusty-rose: 345 30% 70%;
     --olive: 85 20% 40%;
+    
+    /* Sinai retreat colors */
+    --sinai-teal: 195 75% 55%;
+    --sinai-gold: 45 95% 55%;
 
     --font-display: 'Frank Ruhl Libre', serif;
     --font-body: 'Varela Round', sans-serif;
