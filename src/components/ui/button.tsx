@@ -18,6 +18,7 @@ const buttonVariants = cva(
         hero: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-md hover:-translate-y-0.5 font-medium tracking-wide",
         whatsapp: "bg-[#25D366] text-white hover:bg-[#20bd5a] shadow-lg hover:shadow-md hover:-translate-y-0.5 font-medium",
         soft: "bg-soft-pink text-foreground hover:bg-dusty-rose/30 border border-dusty-rose/20",
+        "sinai-gold": "bg-sinai-gold text-foreground hover:bg-sinai-gold/90 shadow-lg hover:shadow-md hover:-translate-y-0.5 font-medium",
       },
       size: {
         default: "h-10 px-4 py-2",

@@ -384,23 +384,22 @@ const RetreatPage = () => {
     return <Navigate to="/" replace />;
   }
 
-  // For the main ESSENCE retreat, show the full detailed page
-  if (retreat.id === "essence-february-2026") {
+  // For Sinai retreats, show the specialized Canva design
+  if (retreat.id.startsWith("sinai-")) {
     return (
       <Layout>
-        {/* Hero */}
-        <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+        {/* Hero Section - Canva Style */}
+        <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-[hsl(195_100%_70%)] via-[hsl(195_75%_60%)] to-sinai-teal">
           <div className="absolute inset-0">
             <img
               src={retreat.image}
               alt={retreat.title}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover opacity-80"
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-background/95" />
           </div>
 
-          <div className="relative z-10 text-center px-4 max-w-4xl mx-auto animate-fade-in">
-            <h1 className="font-display text-6xl md:text-8xl font-semibold tracking-wide text-white mb-6 drop-shadow-lg">
+          <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+            <h1 className="font-display text-5xl md:text-7xl font-bold tracking-wide text-white mb-4 drop-shadow-xl">
               {retreat.title}
             </h1>
             
@@ -417,7 +416,7 @@ const RetreatPage = () => {
               </p>
             </div>
 
-            <Button variant="whatsapp" size="xl" asChild>
+            <Button variant="sinai-gold" size="xl" asChild className="rounded-full">
               <a
                 href={retreat.whatsappLink}
                 target="_blank"
