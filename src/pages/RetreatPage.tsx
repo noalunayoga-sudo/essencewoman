@@ -22,7 +22,7 @@ const SinaiIntroSection = () => (
       </h2>
       
       <p className="font-display text-2xl text-primary mb-4 italic">
-        4 ימים של כיף, חיבור אנושי ורגעים בלתי נשכחים
+        סופ״ש ארוך של חופש, תנועה והרבה כיף
       </p>
       
       <p className="font-body text-xl text-muted-foreground mb-8 leading-relaxed max-w-2xl mx-auto">
@@ -45,7 +45,7 @@ const SinaiScheduleSection = ({ schedule }: { schedule: { day: string; activitie
           לו״ז משוער
         </h2>
         <p className="font-body text-xl text-muted-foreground">
-          4 ימים של תנועה, שקט וחיבור
+          איך נראים הימים שלנו?
         </p>
       </div>
 
@@ -85,7 +85,7 @@ const SinaiIncludesSection = ({ includes }: { includes: string[] }) => (
           </div>
           <h3 className="font-display text-2xl text-foreground mb-4">הלינה</h3>
           <p className="font-body text-foreground/80">
-            3 לילות בבקתות עץ יפיפיות על החוף, ממוזגות ועם מקלחת ושירותים בכל בקתה
+            3 לילות בקאמפ מפנק. חדרים נעימים (פרטיים / משותפים). חלל תרגול סגור וסלון עם אח.
           </p>
         </div>
 
@@ -96,7 +96,7 @@ const SinaiIncludesSection = ({ includes }: { includes: string[] }) => (
           </div>
           <h3 className="font-display text-2xl text-foreground mb-4">האוכל</h3>
           <p className="font-body text-foreground/80">
-            פריסת בוקר מתוקה עם פירות, עוגות, קפה ותה. בראנץ׳ מפנק ומזין. ארוחת ערב עשירה.
+            קפה, תה, פירות ונשנושים. 2 ארוחות מלאות. אוכל פשוט, מזין ומלא צבע.
           </p>
         </div>
 
@@ -107,7 +107,7 @@ const SinaiIncludesSection = ({ includes }: { includes: string[] }) => (
           </div>
           <h3 className="font-display text-2xl text-foreground mb-4">התהליך</h3>
           <p className="font-body text-foreground/80">
-            שיעורי יוגה, סדנאות, דיפ שוואסאנה, שנורקלינג, מדורה, ומתנה אישית לכל משתתף/ת
+            טקס פתיחה וסיום. שיעורי יוגה. סדנאות מגוונות. זמן אישי להטמעה, מנוחה ושהייה בטבע.
           </p>
         </div>
       </div>
@@ -136,7 +136,7 @@ const SinaiLocationSection = () => (
             מלדיב ביץ׳ - חוף אל מאחש
           </h2>
           <p className="font-body text-xl text-muted-foreground">
-            הבית שלנו ל-4 ימים
+            הבית שלנו לסופ״ש
           </p>
         </div>
 
@@ -145,7 +145,7 @@ const SinaiLocationSection = () => (
             קאמפ מלדיב ביץ׳ ממוקם על חוף אל מאחש הקסום בסיני, עם נוף ישיר לים ולהרים.
           </p>
           <p>
-            בקתות עץ יפיפיות על החוף - ממוזגות, עם מקלחת ושירותים פרטיים בכל בקתה.
+            חדרים נעימים (פרטיים / משותפים), חלל תרגול סגור וסלון עם אח.
           </p>
           <p>
             מרחב תרגול מושלם מול הים, אוכל מעולה, ואווירה שמזמינה להרפות ולהתחבר.
@@ -242,26 +242,44 @@ const SinaiAboutSection = () => (
         מי מנחה?
       </h2>
       
-      <div className="gradient-card rounded-3xl p-8 shadow-elevated">
-        <div className="flex flex-col md:flex-row items-center gap-8">
-          <img 
-            src={noaProfile} 
-            alt="נועה מתתיהו" 
-            className="w-48 h-48 rounded-full object-cover shadow-lg"
-          />
-          <div className="text-center md:text-right">
-            <h3 className="font-display text-3xl text-primary mb-2">נועה מתתיהו</h3>
-            <p className="font-body text-sm text-muted-foreground mb-4 italic">
-              Wellness & Lifestyle
-            </p>
-            <p className="font-body text-foreground/80 leading-relaxed">
-              מחברת אנשים לעצמם ולאחרים מתוך מקום של רכות, שמחה וקבלה.
-              <br /><br />
-              מורה ותלמידה של היוגה כבר יותר מעשור. מנחה סדנאות, מלווה תהליכים, 
-              ויוצרת מרחבים שמזמינים חיבור אמיתי לגוף ולנפש.
-              <br /><br />
-              בריטריט יצטרפו אלינו גם מנחים אורחים מיוחדים שיוסיפו עומק וגיוון לחוויה.
-            </p>
+      <div className="space-y-8">
+        {/* נועה */}
+        <div className="gradient-card rounded-3xl p-8 shadow-elevated">
+          <div className="flex flex-col md:flex-row items-center gap-8">
+            <img 
+              src={noaProfile} 
+              alt="נועה מתתיהו" 
+              className="w-48 h-48 rounded-full object-cover shadow-lg"
+            />
+            <div className="text-center md:text-right">
+              <h3 className="font-display text-3xl text-primary mb-2">נועה מתתיהו</h3>
+              <p className="font-body text-foreground/80 leading-relaxed">
+                מורה ותלמידה של היוגה כבר יותר מעשור. יוצרת תוכן ומנחת סדנאות גוף נפש.
+                <br /><br />
+                מלווה תהליכים ברוח ההתמקדות בשילוב דימיון מודרך, סאונד הילינג וכלים נוספים מעולמות הרוח והמיינדפולנס.
+                <br /><br />
+                אוהבת אנשים, לרקוד, לצחוק ולגלות דברים חדשים.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* שירה */}
+        <div className="gradient-card rounded-3xl p-8 shadow-elevated">
+          <div className="flex flex-col md:flex-row items-center gap-8">
+            <div className="w-48 h-48 rounded-full bg-primary/10 flex items-center justify-center shadow-lg">
+              <span className="font-display text-4xl text-primary">🎵</span>
+            </div>
+            <div className="text-center md:text-right">
+              <h3 className="font-display text-3xl text-primary mb-2">שירה שירה</h3>
+              <p className="font-body text-foreground/80 leading-relaxed">
+                מוזיקאית, זמרת, גיטריסטית ומורה למוזיקה.
+                <br /><br />
+                מביאה קול ייחודי וסגנון חם ואותנטי, יוצרת במגוון רחב של סגנונות מבלוז רוק ועד ג׳אז וקאנטרי.
+                <br /><br />
+                בשירים מקוריים שמדברים על תהליכים פנימיים, חיים, הרצון לחופש ואהבה עצמית.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -281,55 +299,33 @@ const SinaiForWhoSection = () => (
         </p>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-6">
-        <div className="gradient-card rounded-2xl p-6 shadow-elevated">
-          <h3 className="font-display text-xl text-primary mb-4">מתאים לך אם...</h3>
-          <ul className="space-y-3 font-body text-foreground/80">
+      <div className="gradient-card rounded-2xl p-8 shadow-elevated max-w-2xl mx-auto">
+          <ul className="space-y-4 font-body text-foreground/80">
             <li className="flex items-start gap-2">
               <Check className="text-primary flex-shrink-0 mt-1" size={18} />
-              את/ה מחפש/ת חופשה שונה מהרגיל
+              לכל מי שבא להם חופש רגוע, פשוט וכיפי
             </li>
             <li className="flex items-start gap-2">
               <Check className="text-primary flex-shrink-0 mt-1" size={18} />
-              רוצה להתנתק באמת מהשגרה
+              מי שרוצה לשלב יוגה, תנועה וסדנאות מגוונות באווירה קלילה ובאיזון טוב של זמן חופשי
             </li>
             <li className="flex items-start gap-2">
               <Check className="text-primary flex-shrink-0 mt-1" size={18} />
-              אוהב/ת יוגה או סקרן/ית להתנסות
+              התכנים מתאימים גם למי שאין לו ניסיון ביוגה
             </li>
             <li className="flex items-start gap-2">
               <Check className="text-primary flex-shrink-0 mt-1" size={18} />
-              מחפש/ת חיבור אנושי אמיתי
+              מי שמרגיש שהגיע הזמן להתנתק מהיומיום ולהיטען באנרגיות חדשות
             </li>
             <li className="flex items-start gap-2">
               <Check className="text-primary flex-shrink-0 mt-1" size={18} />
-              רוצה לחזור הביתה רענן/ה ומלא/ת אנרגיה
+              מי שאוהב להכיר אנשים, לצחוק, ולצאת חזרה עם בהירות ורוגע
             </li>
           </ul>
+          <p className="font-body text-foreground/80 mt-6 text-center italic">
+            אם נשמע לך שזה בדיוק החופשה שאת.ה צריכ.ה - זה הזמן להצטרף אלינו.
+          </p>
         </div>
-
-        <div className="gradient-card rounded-2xl p-6 shadow-elevated">
-          <h3 className="font-display text-xl text-primary mb-4">לא צריך...</h3>
-          <ul className="space-y-3 font-body text-foreground/80">
-            <li className="flex items-start gap-2">
-              <span className="text-primary">✓</span>
-              ניסיון קודם ביוגה
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-primary">✓</span>
-              להיות גמיש/ה או ספורטיבי/ת
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-primary">✓</span>
-              להגיע עם מישהו - אנשים מגיעים לבד ויוצאים עם חברים
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-primary">✓</span>
-              לדעת לשנרקל - נלמד במקום!
-            </li>
-          </ul>
-        </div>
-      </div>
     </div>
   </section>
 );
