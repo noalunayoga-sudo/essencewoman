@@ -203,7 +203,7 @@ const SinaiPricingSection = ({ priceTiers, whatsappLink, cancellationPolicy }: {
           })}
         </div>
 
-        <div className="text-center mb-12">
+        <div className="text-center mb-4">
           <Button variant="whatsapp" size="xl" asChild>
             <a
               href={whatsappLink}
@@ -214,6 +214,10 @@ const SinaiPricingSection = ({ priceTiers, whatsappLink, cancellationPolicy }: {
             </a>
           </Button>
         </div>
+
+        <p className="text-center font-body text-sm text-muted-foreground mb-12">
+          (מעבר גבול וביטוח נסיעות אינם כלולים במחיר)
+        </p>
 
         {cancellationPolicy && cancellationPolicy.length > 0 && (
           <div className="gradient-card rounded-2xl p-6 shadow-elevated">
@@ -278,6 +282,23 @@ const SinaiAboutSection = () => (
                 מביאה קול ייחודי וסגנון חם ואותנטי, יוצרת במגוון רחב של סגנונות מבלוז רוק ועד ג׳אז וקאנטרי.
                 <br /><br />
                 בשירים מקוריים שמדברים על תהליכים פנימיים, חיים, הרצון לחופש ואהבה עצמית.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* רותם */}
+        <div className="gradient-card rounded-3xl p-8 shadow-elevated">
+          <div className="flex flex-col md:flex-row items-center gap-8">
+            <div className="w-48 h-48 rounded-full bg-primary/10 flex items-center justify-center shadow-lg">
+              <span className="font-display text-4xl text-primary">🤸</span>
+            </div>
+            <div className="text-center md:text-right">
+              <h3 className="font-display text-3xl text-primary mb-2">רותם ביתשם</h3>
+              <p className="font-body text-foreground/80 leading-relaxed">
+                אחרי 6 שנים בעולם הקרקס, בהדרכה והופעות בארץ ובחו״ל, עברה להוראת אקרו-יוגה לקבוצות וסדנאות.
+                <br /><br />
+                מזמינה אתכם להתמסר ולעוף איתה בתרגול חוויתי ומהנה, המשלב את יסודות האקרו עם דגש על שחרור, יציבות, תקשורת וחיבור.
               </p>
             </div>
           </div>
